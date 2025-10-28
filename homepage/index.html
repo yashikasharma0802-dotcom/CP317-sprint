@@ -6,24 +6,24 @@
     <title>Hawk Shop - Wilfrid Laurier Bookstore</title>
     <link rel="stylesheet" href="style.css">
     <!-- fontawesome icon libary -->
-    <script src="https://kit.fontawesome.com/359ccc3c21.js" crossorigin="anonymous"></script> 
+    <script src="https://kit.fontawesome.com/b551428bdf.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <!------------------ Home page / Header section ------------------------->
 <div id="header">
     <div class="container">
         <nav>
-            <img src="" alt="logo">
+            <img src="images/hawkshop.png" alt="logo" class="logo">
+
             <ul id="sidemenu">
                 <li><a href="#header">Home</a></li>
                 <li><a href="#course">Course Materials</a></li>
                 <li><a href="#merch">Apparel & Merch</a></li>
                 <li><a href="#tech">Stationary & Tech</a></li>
                 <li><a href="#giftshop">Giftshop</a></li>
-                <i class="fa-solid fa-rectangle-xmark" onclick="closemenu()"></i>
             </ul>
-            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-            
+
+            <a href="search.html"><i class="fa-brands fa-searchengin"></i></a>
         </nav>
         <div>
             <div class="header-main">
@@ -32,13 +32,16 @@
         </div>
     </div>
 </div>
-<!------------------ Portfolio section ------------------------->
-<div id="portfolio">
+
+
+<div class="section-divider"></div> <!-- optional visual break -->
+<!------------------ Merch top sellers ------------------------->
+<div id="merch">
     <div class="container">
-        <h1 class="sub-title">My Portfolio</h1>
+        <h1 class="sub-title">Top Sellers</h1>
         <div class="work-list">
             <div class="work">
-                <img src="images for website/tempP.jpg">
+                <img src="images/sweater.jpg">
                 <div class="layer">
                     <h3>Personal Website</h3>
                     <p>Code for this website made using html, css and JS.</p>
@@ -46,7 +49,7 @@
                 </div>
             </div>
             <div class="work">
-                <img src="images for website/tempP.jpg">
+                <img src="images/jacket.jpg">
                 <div class="layer">
                     <h3>Notes App</h3>
                     <p>This notes app features powerful organization with search, filters, and a sleek modal for seamless note management.</p>
@@ -54,7 +57,7 @@
                 </div>
             </div>
             <div class="work">
-                <img src="images for website/tempP.jpg">
+                <img src="images/polo.jpg">
                 <div class="layer">
                     <h3>XYZ - 3 APP</h3>
                     <p>desc of project</p>
@@ -67,23 +70,6 @@
 </div>
 
 <!------------------ Script Section ------------------------->
-
-<!-- About me tab script -->
-<script>
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-    function opentab(tabname){
-        for(tablink of tablinks){
-            tablink.classList.remove("active-link");
-        }
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab")
-    }
-
-</script>
 
 <!-- small device menu side bar close and open -->
 <script>
@@ -99,26 +85,6 @@
 
 </script>
 
-<!-- Contact form sending information to google sheet -->
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwBDI8ZcV1tr4C8uO7v4RcZI_e_2dsNv5XVNM6Fg1nQZw98a8Y6fJDw7511Kxhz9edq/exec'
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            msg.innerHTML = "Message sent successfully!"
-            setTimeout(function(){
-                msg.innerHTML = ""
-            }, 5000)
-            form.reset()
-        })
-        .catch(error => console.error('Error!', error.message))
-    })
-  </script>
 
-    
 </body>
 </html>
