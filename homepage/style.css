@@ -34,6 +34,7 @@ body{
   height: auto;
 }
 
+
 nav ul li a {
   color: #fff;
   text-decoration: none;
@@ -46,13 +47,14 @@ nav ul li a:hover {
   color: #fbc212; 
 }
 
-nav a i.fa-searchengin {
+nav a i {
   color: #7a3cff; 
   font-size: 20px;
-  margin-left: 25px;
+  margin-left: 10px; 
   cursor: pointer;
 }
 
+/*
 
 nav{
     display: flex;
@@ -78,6 +80,7 @@ nav ul li a{
     font-size: 18x;
     position: relative;
 }
+   */ 
 
 nav ul li a::after{
     content: '';
@@ -94,6 +97,58 @@ nav ul li a:hover::after{
     width: 100%;
 }
 
+
+nav ul li a:hover {
+  color: #fbc212; 
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+  background-color: #080808; /* optional */
+}
+
+/* Logo on the left */
+nav .logo {
+  height: 50px;
+  cursor: pointer;
+}
+
+/* Centered menu */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex: 1; /* makes it expand and center between logo and icons */
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+
+/* Right-aligned icons */
+nav a i {
+  color: #7a3cff;
+  font-size: 20px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+/* Hide the X and hamburger unless in mobile view */
+.fa-rectangle-xmark,
+.fa-bars {
+  display: none;
+}
 
 .header-main {
     display: flex;
@@ -288,6 +343,13 @@ nav .fa-solid{
         padding-top: 50px;
         z-index: 2;
         transition: right 0.5s;
+        position: fixed;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-top: 80px;
+        transition: right 0.3s ease;
+        z-index: 100;
     }
     nav ul li{
         display: block;
@@ -325,3 +387,5 @@ nav .fa-solid{
         font-size: 14px;
     }
 }
+
+
