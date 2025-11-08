@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Materials - HawkShop</title>
+    <!-- fontawesome icon libary -->
+    <script src="https://kit.fontawesome.com/b551428bdf.js" crossorigin="anonymous"></script>
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+/>
+</head>
+<body>
+
+<!-- Nav bar -->
+
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/hawkshop.png" alt="logo" class="logo">
+
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#course">Course Materials</a></li>
+                <li><a href="#merch">Apparel & Merch</a></li>
+                <li><a href="#tech">Stationary & Tech</a></li>
+                <li><a href="#giftshop">Giftshop</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+                <i class="fa-solid fa-rectangle-xmark" onclick="closemenu()"></i>
+            </ul>
+
+            <a href="search.html"><i class="fa-brands fa-searchengin"></i></a>
+            <a href=""><i class="fa fa-cart-shopping"></i></a>
+            <a href=""><i class="fa-regular fa-user"></i></a>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!------------------ Course Materials Section ------------------------->
+
+<div id="course">
+    <div class="container">
+        <h1 class="sub-title">Course Materials</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/textbook1.jpg" alt="Textbook 1">
+                <div class="layer">
+                    <h3>Introduction to Psychology</h3>
+                    <p>Author: John Doe | ISBN: 1234567890</p>
+                    <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <button class="add-to-wishlist">Add to Wishlist</button>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/textbook2.jpg" alt="Textbook 2">
+                <div class="layer">
+                    <h3>Calculus for Beginners</h3>
+                    <p>Author: Jane Smith | ISBN: 0987654321</p>
+                    <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <button class="add-to-wishlist">Add to Wishlist</button>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/textbook3.jpg" alt="Textbook 3">
+                <div class="layer">
+                    <h3>World History Overview</h3>
+                    <p>Author: Emily Johnson | ISBN: 1122334455</p>
+                    <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <button class="add-to-wishlist">Add to Wishlist</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #080808;
+    color: #fff
+}
+#header{
+    width: 100%;
+    height: 100vh;
+    /* background image section */
+    /* background-image: url(images\ for\ website/bg.png); */
+    background-position: center;
+    background-size: cover;
+
+}
+
+.container{
+    padding: 10px 10%;
+    width: 100%;
+    max-width: none; 
+
+}
+
+.logo {
+  width: 140px; 
+  height: auto;
+}
+
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #fbc212; 
+}
+
+nav a i {
+  color: #7a3cff; 
+  font-size: 20px;
+  margin-left: 10px; 
+  cursor: pointer;
+}
+
+nav ul li a::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: #421885;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+
+nav ul li a:hover {
+  color: #fbc212; 
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+  background-color: #080808; /* optional */
+}
+
+/* Logo on the left */
+nav .logo {
+  height: 50px;
+  cursor: pointer;
+}
+
+/* Centered menu */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex: 1; 
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+
+/* Right-aligned icons */
+nav a i {
+  color: #7a3cff;
+  font-size: 20px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+/* Hide the X and hamburger unless in mobile view */
+.fa-rectangle-xmark,
+.fa-bars {
+  display: none;
+}
+
+#header {
+  width: 100%;
+  height: auto;
+  background: #080808;
+}
+
+.section-divider {
+  width: 80%;
+  height: 2px;
+  background: #fbc212;
+  margin: 20px auto 0;
+}
