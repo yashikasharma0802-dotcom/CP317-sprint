@@ -282,6 +282,25 @@ nav a i {
     background: #1172f1;
 }
 
+.add-to-wishlist {
+      background-color: #1172f1;   /* red background */
+      color: white;                /* white text */
+      border: none;                /* remove default border */
+      padding: 10px 20px;          /* space inside the button */
+      border-radius: 8px;          /* rounded corners */
+      font-size: 16px;             /* text size */
+      cursor: pointer;             /* pointer on hover */
+      transition: background-color 0.3s ease; /* smooth hover */
+}
+
+.add-to-wishlist:hover {
+    background-color: #0b5cc2;   /* darker red when hovered */
+}
+
+.layer a + .add-to-wishlist {
+    margin-top: 25px; /* space between the icon and Add to Wishlist button */
+}
+
 
 
 /* footer css */
@@ -387,5 +406,3 @@ nav .fa-solid{
         font-size: 14px;
     }
 }
-
-
