@@ -21,8 +21,8 @@
             <img src="images/hawkshop.png" alt="logo" class="logo">
 
             <ul id="sidemenu">
-                <li><a href="#header">Home</a></li>
-                <li><a href="#course">Course Materials</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="coursem.html">Course Materials</a></li>
                 <li><a href="#merch">Apparel & Merch</a></li>
                 <li><a href="#tech">Stationary & Tech</a></li>
                 <li><a href="#giftshop">Giftshop</a></li>
@@ -47,27 +47,27 @@
         <h1 class="sub-title">Course Materials</h1>
         <div class="work-list">
             <div class="work">
-                <img src="images/textbook1.jpg" alt="Textbook 1">
+                <img src="images/coursem/intro-to-psych.jpg" alt="Textbook 1">
                 <div class="layer">
-                    <h3>Introduction to Psychology</h3>
+                    <h3>Introduction to Psychology Textbook</h3>
                     <p>Author: John Doe | ISBN: 1234567890</p>
                     <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
                     <button class="add-to-wishlist">Add to Wishlist</button>
                 </div>
             </div>
             <div class="work">
-                <img src="images/textbook2.jpg" alt="Textbook 2">
+                <img src="images/coursem/Nelson-Calculus-and-Vectors.jpg" alt="Textbook 2">
                 <div class="layer">
-                    <h3>Calculus for Beginners</h3>
+                    <h3>Calculus & Vectors Textbook</h3>
                     <p>Author: Jane Smith | ISBN: 0987654321</p>
                     <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
                     <button class="add-to-wishlist">Add to Wishlist</button>
                 </div>
             </div>
             <div class="work">
-                <img src="images/textbook3.jpg" alt="Textbook 3">
+                <img src="images/coursem/econ-textbook.jpg" alt="Textbook 3">
                 <div class="layer">
-                    <h3>World History Overview</h3>
+                    <h3>Internation Economics Textbook</h3>
                     <p>Author: Emily Johnson | ISBN: 1122334455</p>
                     <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
                     <button class="add-to-wishlist">Add to Wishlist</button>
@@ -215,3 +215,207 @@ nav a i {
   background: #fbc212;
   margin: 20px auto 0;
 }
+
+/* Course Materials */
+#portfolio{
+    padding: 50px 0;
+}
+
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.work:hover img{
+    transform: scale(1.1);
+}
+
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6), #7a3cff);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+
+}
+
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.layer a{
+    margin-top: 20px;
+    color: #1172f1;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+
+}
+
+.work:hover .layer{
+    height: 100%;
+}
+
+
+.btn{ 
+    display: block; 
+    margin: 50px auto;   
+    width: fit-content;
+    border: 1px solid #1172f1;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+}
+
+.btn:hover{
+    background: #1172f1;
+}
+
+.add-to-wishlist {
+      background-color: #1172f1;   
+      color: white;               
+      border: none;               
+      padding: 10px 20px;          
+      border-radius: 8px;          
+      font-size: 16px;             
+      cursor: pointer;             
+      transition: background-color 0.3s ease; 
+}
+
+.add-to-wishlist:hover {
+    background-color: #0b5cc2;   
+}
+
+.layer a + .add-to-wishlist {
+    margin-top: 25px; 
+}
+
+@media only screen and (max-width:600px){
+
+    #header{
+        /* change to phone background image later */
+        background-image: url(images\ for\ website/tempbg.avif);
+    }
+    .carousel {
+        width: 80%;
+    }
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 30px;
+    }
+    nav .fa-solid{
+        display: block;
+        font-size: 25px;
+    }
+    nav ul{
+        background: #421885;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+        position: fixed;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-top: 80px;
+        transition: right 0.3s ease;
+        z-index: 100;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+
+    }
+    nav ul .fa-solid{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    
+    .sub-title{
+        font-size: 40px;
+    }
+    .about-col1, .about-col2{
+        flex-basis: 100%;
+    }
+    .about-col1{
+        margin-bottom: 30px;
+    }
+    .about-col2{
+        font-size: 14px;
+    }
+    .tab-links{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
+
+    .footer{
+        font-size: 14px;
+    }
+}
+
+
+</style>
+
+<!-- Script -->
+ <script>
+    var sidemenu = document.getElementById('sidemenu');
+    
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+
+</script>
+<script src="wishlist.js"></script>
+
+</body>
+</html>
