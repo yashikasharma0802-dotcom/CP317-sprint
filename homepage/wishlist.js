@@ -24,6 +24,22 @@ if (listContainer) {
   wishlist.forEach(item => {
     let li = document.createElement("li");
     li.textContent = item;
+
+    // Create remove button
+    let removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+    removeBtn.className = "remove-from-wishlist";
+
+    removeBtn.addEventListener("click", function () {
+      // Remove from array
+      wishlist = wishlist.filter(w => w !== item);
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+      // Remove from page immediately
+      li.remove();
+    });
+
+    li.appendChild(removeBtn);
     listContainer.appendChild(li);
   });
 }
