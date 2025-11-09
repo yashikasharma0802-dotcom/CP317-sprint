@@ -405,3 +405,20 @@ nav .fa-solid{
         font-size: 14px;
     }
 }
+
+/*remove button*/
+.remove-from-wishlist {
+  margin-top: 8px;
+  display: inline-block;
+  padding: 8px 12px;
+  background: #b30000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.remove-from-wishlist:hover {
+  background: #7a0000;
+}
