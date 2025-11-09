@@ -3,12 +3,16 @@ const buttons = document.querySelectorAll(".add-to-wishlist");
 
 buttons.forEach(button => {
   button.addEventListener("click", function () {
-    let itemName = this.parentElement.querySelector("h3").innerText;
+
+    let productCard = this.closest(".work"); // the outer product card div
+    let itemName = productCard.querySelector("h3").innerText;
+    let itemImage = productCard.querySelector("img").getAttribute("src");
 
     let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
-    if (!wishlist.includes(itemName)) {
-      wishlist.push(itemName);
+    // store product as object {name, image}
+    if (!wishlist.some(item => item.name === itemName)) {
+      wishlist.push({ name: itemName, image: itemImage });
       localStorage.setItem("wishlist", JSON.stringify(wishlist));
       alert(itemName + " added to wishlist!");
     }
@@ -22,24 +26,36 @@ if (listContainer) {
   let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
   wishlist.forEach(item => {
-    let li = document.createElement("li");
-    li.textContent = item;
+    // Create card container (same class naming style as merch grid)
+    let card = document.createElement("div");
+    card.className = "work";
 
-    // Create remove button
+    // Card image
+    let img = document.createElement("img");
+    img.src = item.image;
+
+    // Overlay/Info section
+    let layer = document.createElement("div");
+    layer.className = "layer";
+
+    let title = document.createElement("h3");
+    title.textContent = item.name;
+
     let removeBtn = document.createElement("button");
     removeBtn.textContent = "Remove";
     removeBtn.className = "remove-from-wishlist";
 
+    // Remove logic
     removeBtn.addEventListener("click", function () {
-      // Remove from array
-      wishlist = wishlist.filter(w => w !== item);
+      wishlist = wishlist.filter(w => w.name !== item.name);
       localStorage.setItem("wishlist", JSON.stringify(wishlist));
-
-      // Remove from page immediately
-      li.remove();
+      card.remove();
     });
 
-    li.appendChild(removeBtn);
-    listContainer.appendChild(li);
+    layer.appendChild(title);
+    layer.appendChild(removeBtn);
+    card.appendChild(img);
+    card.appendChild(layer);
+    listContainer.appendChild(card);
   });
 }
