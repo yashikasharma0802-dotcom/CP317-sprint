@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" style="max-width:480px;margin:2rem auto;">
+    <h1>Create Account</h1>
+    <form id="signupForm">
+      <label>Full Name <input type="text" id="name" required></label><br>
+      <label>Email <input type="email" id="email" required></label><br>
+      <label>Password <input type="password" id="password" minlength="8" required></label><br>
+      <label>Confirm Password <input type="password" id="confirm" minlength="8" required></label><br>
+      <p id="signupError" style="color:red;"></p>
+      <button type="submit">Create Account</button>
+      <p>Already have an account? <a href="login.html">Sign in</a></p>
+    </form>
+  </div>
 
+  <script src="auth.js"></script>
+  <script>
+    const form = document.getElementById("signupForm");
+    const err = document.getElementById("signupError");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim().toLowerCase();
+      const password = document.getElementById("password").value;
+      const confirm = document.getElementById("confirm").value;
+      err.textContent = "";
+
+      if (password !== confirm) {
+        err.textContent = "Passwords do not match.";
+        return;
+      }
+      if (Auth.userExists(email)) {
+        err.textContent = "Account already exists.";
+        return;
+      }
+      Auth.createUser({ name, email, password });
+      Auth.login(email, password);
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>
