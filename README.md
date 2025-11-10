@@ -20,6 +20,7 @@ Hawkshop redesign project for CP317 - Software Engineering @ Wilfrid Laurier Uni
 * Jayden Graneta
 * Yashika Sharma
 * Rabia Durrani
+* Ravishan Thanarajah
 
 ## Sources
 
