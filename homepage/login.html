@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" style="max-width:420px;margin:2rem auto;">
+    <h1>Sign In</h1>
+    <form id="loginForm">
+      <label>Email <input type="email" id="email" required></label><br>
+      <label>Password <input type="password" id="password" required></label><br>
+      <p id="loginError" style="color:red;"></p>
+      <button type="submit">Sign In</button>
+      <p>No account? <a href="signup.html">Create one</a></p>
+    </form>
+  </div>
+
+  <script src="auth.js"></script>
+  <script>
+    const form = document.getElementById("loginForm");
+    const err = document.getElementById("loginError");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim().toLowerCase();
+      const password = document.getElementById("password").value;
+      err.textContent = "";
+      const ok = Auth.login(email, password);
+      if (!ok) {
+        err.textContent = "Invalid email or password.";
+        return;
+      }
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>
 
