@@ -38,7 +38,7 @@ Course Materials product section for Hawk Shop - Wilfrid Laurier Bookstore
             </ul>
 
             <a href="search.html"><i class="fa-brands fa-searchengin"></i></a>
-            <a href=""><i class="fa fa-cart-shopping"></i></a>
+            <a href="checkout.html" id="cart-link"><i class="fa fa-cart-shopping"></i></a>
             <a href=""><i class="fa-regular fa-user"></i></a>
             <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
@@ -58,7 +58,9 @@ Course Materials product section for Hawk Shop - Wilfrid Laurier Bookstore
                 <div class="layer">
                     <h3>Scientific Calculator</h3>
                     <p>Casio</p>
+                    <p class="price">$79.99</p>
                     <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <button class="add-to-cart" data-id="stat-calc-1" data-name="Scientific Calculator" data-price="79.99" data-image="images/stationary/calc.jpg">Add to Cart</button>
                     <button class="add-to-wishlist">Add to Wishlist</button>
                 </div>
             </div>
@@ -67,7 +69,9 @@ Course Materials product section for Hawk Shop - Wilfrid Laurier Bookstore
                 <div class="layer">
                     <h3>Metal Ball Point Pen</h3>
                     <p>Wilfrid Laurier Univeristy Merchandise</p>
+                    <p class="price">$4.99</p>
                     <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <button class="add-to-cart" data-id="stat-pen-1" data-name="Metal Ball Point Pen" data-price="4.99" data-image="images/stationary/pen.jpg">Add to Cart</button>
                     <button class="add-to-wishlist">Add to Wishlist</button>
                 </div>
             </div>
@@ -76,7 +80,9 @@ Course Materials product section for Hawk Shop - Wilfrid Laurier Bookstore
                 <div class="layer">
                     <h3>USC Type-C Earpods</h3>
                     <p>Apple</p>
+                    <p class="price">$29.99</p>
                     <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <button class="add-to-cart" data-id="stat-earpods-1" data-name="USC Type-C Earpods" data-price="29.99" data-image="images/stationary/earpods.jpg">Add to Cart</button>
                     <button class="add-to-wishlist">Add to Wishlist</button>
                 </div>
             </div>
@@ -422,6 +428,7 @@ nav a i {
     }
 
 </script>
+<script src="cart.js"></script>
 <script src="wishlist.js"></script>
 
 </body>

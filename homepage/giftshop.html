@@ -34,8 +34,8 @@ Giftshop product section for Hawk Shop - Wilfrid Laurier Bookstore
                 <i class="fa-solid fa-rectangle-xmark" onclick="closemenu()"></i>
             </ul>
 
-            <a href="search.html"><i class="fa-brands fa-searchengin"></i></a>
-            <a href=""><i class="fa fa-cart-shopping"></i></a>
+                <a href="search.html"><i class="fa-brands fa-searchengin"></i></a>
+            <a href="checkout.html" id="cart-link"><i class="fa fa-cart-shopping"></i></a>
             <a href=""><i class="fa-regular fa-user"></i></a>
             <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
@@ -54,7 +54,9 @@ Giftshop product section for Hawk Shop - Wilfrid Laurier Bookstore
                 <div class="layer">
                     <h3>Laurier Steerling Silver Ring</h3>
                     <p>Wilfrid Laurier Univeristy Merchandise</p>
+                    <p class="price">$49.99</p>
                     <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <button class="add-to-cart" data-id="gift-ring-1" data-name="Laurier Steerling Silver Ring" data-price="49.99" data-image="images/giftshop/LaurierRing.jpg">Add to Cart</button>
                     <button class="add-to-wishlist">Add to Wishlist</button>
                 </div>
             </div>
@@ -63,7 +65,9 @@ Giftshop product section for Hawk Shop - Wilfrid Laurier Bookstore
                 <div class="layer">
                     <h3>Laurier Shirt Bear</h3>
                     <p>Wilfrid Laurier Univeristy Merchandise</p>
+                    <p class="price">$24.99</p>
                     <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <button class="add-to-cart" data-id="gift-bear-1" data-name="Laurier Shirt Bear" data-price="24.99" data-image="images/giftshop/LaurierBear.jpg">Add to Cart</button>
                     <button class="add-to-wishlist">Add to Wishlist</button>
                 </div>
             </div>
@@ -72,7 +76,9 @@ Giftshop product section for Hawk Shop - Wilfrid Laurier Bookstore
                 <div class="layer">
                     <h3>Laurier Embossed Silver Flask</h3>
                     <p>Wilfrid Laurier Univeristy Merchandise</p>
+                    <p class="price">$34.99</p>
                     <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <button class="add-to-cart" data-id="gift-flask-1" data-name="Laurier Embossed Silver Flask" data-price="34.99" data-image="images/giftshop/LaurierFlask.jpg">Add to Cart</button>
                     <button class="add-to-wishlist">Add to Wishlist</button>
                 </div>
             </div>
@@ -417,6 +423,7 @@ nav a i {
 
 </script>
 <script src="wishlist.js"></script>
+<script src="cart.js"></script>
 
 </body>
 </html>

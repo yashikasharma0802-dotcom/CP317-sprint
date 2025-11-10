@@ -302,6 +302,82 @@ nav a i {
     margin-top: 25px; 
 }
 
+/* Cart & checkout styles (purple + black theme) */
+.price {
+    margin: 8px 0;
+    font-weight: 600;
+    color: #dcd6ff;
+}
+
+.add-to-cart {
+    background: #7a3cff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.add-to-cart:hover { background: #5f2bcc; }
+
+.cart-item{ 
+    display: flex; 
+    gap: 12px; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 12px; 
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.cart-thumb{
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+#summary{ 
+    background: linear-gradient(180deg, rgba(122,60,255,0.02), transparent);
+    padding: 18px; 
+    margin-top: 16px; 
+    border-radius: 12px;
+    color: #fff;
+}
+
+#promo-area{ 
+    margin-top: 18px; 
+    padding: 12px; 
+    border-radius: 8px;
+    background: rgba(255,255,255,0.04);
+}
+
+/* Checkout card: white card on dark background for better contrast */
+#cart-container{
+    max-width: 980px;
+    margin: 28px auto;
+    background: #fff;
+    color: #111;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+
+#cart-container h1.sub-title{ color: #111; }
+
+#cart-container .row span{ color: #111; }
+
+#promo-area input{ padding:8px; border-radius:6px; border:1px solid #ddd; margin-right:8px; }
+#promo-area button{ padding:8px 12px; border-radius:6px; border:none; background:#111; color:#fff; cursor:pointer }
+#promo-area button#clear-promo{ background:transparent; color:#111; border:1px solid #ddd }
+
+.cart-qty button{ 
+    background:#2b1a4f; color:#fff; border:none; padding:4px 8px; border-radius:4px; cursor:pointer;
+}
+
+.remove-item{ background:transparent; color:#ff8080; border:none; cursor:pointer; }
+
 /* footer css */
 
 .footer{

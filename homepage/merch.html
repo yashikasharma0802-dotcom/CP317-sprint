@@ -35,7 +35,7 @@ Apparel & Merch product section for Hawk Shop - Wilfrid Laurier Bookstore
             </ul>
 
             <a href="search.html"><i class="fa-brands fa-searchengin"></i></a>
-            <a href=""><i class="fa fa-cart-shopping"></i></a>
+            <a href="checkout.html" id="cart-link"><i class="fa fa-cart-shopping"></i></a>
             <a href=""><i class="fa-regular fa-user"></i></a>
             <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
@@ -55,7 +55,9 @@ Apparel & Merch product section for Hawk Shop - Wilfrid Laurier Bookstore
                 <div class="layer">
                     <h3>Laurier Pull over hoodie</h3>
                     <p>Wilfrid Laurier Univeristy Merchandise</p>
+                    <p class="price">$64.50</p>
                     <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <button class="add-to-cart" data-id="merch-hoodie-1" data-name="Laurier Pullover Hoodie" data-price="64.5" data-image="images/merch/hoodie.jpg">Add to Cart</button>
                     <button class="add-to-wishlist">Add to Wishlist</button>
                 </div>
             </div>
@@ -64,7 +66,9 @@ Apparel & Merch product section for Hawk Shop - Wilfrid Laurier Bookstore
                 <div class="layer">
                     <h3>Midas Crewneck Sweater</h3>
                     <p>Wilfrid Laurier Univeristy Merchandise</p>
+                    <p class="price">$39.99</p>
                     <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <button class="add-to-cart" data-id="merch-crewneck-1" data-name="Midas Crewneck Sweater" data-price="39.99" data-image="images/merch/crewneck.jpg">Add to Cart</button>
                     <button class="add-to-wishlist">Add to Wishlist</button>
                 </div>
             </div>
@@ -73,7 +77,9 @@ Apparel & Merch product section for Hawk Shop - Wilfrid Laurier Bookstore
                 <div class="layer">
                     <h3>Laurier Quarter-Zip Sweater</h3>
                     <p>Wilfrid Laurier Univeristy Merchandise</p>
+                    <p class="price">$54.99</p>
                     <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <button class="add-to-cart" data-id="merch-quarterzip-1" data-name="Laurier Quarter-Zip Sweater" data-price="54.99" data-image="images/merch/quarterzip.jpg">Add to Cart</button>
                     <button class="add-to-wishlist">Add to Wishlist</button>
                 </div>
             </div>
@@ -419,6 +425,7 @@ nav a i {
     }
 
 </script>
+<script src="cart.js"></script>
 <script src="wishlist.js"></script>
 
 </body>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Checkout - HawkShop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1 class="sub-title">Checkout</h1>
+
+  <div id="cart-container">
+    <div id="cart-items"></div>
+
+    <div id="summary">
+      <div class="row"><span>Subtotal:</span> <span id="subtotal">$0.00</span></div>
+      <div class="row" id="discount-row" style="display:none;"><span>Discount (<span id="applied-code"></span>):</span> <span id="discount-amount">-$0.00</span></div>
+      <div class="row"><strong>Total:</strong> <strong id="total">$0.00</strong></div>
+    </div>
+
+    <div id="promo-area">
+      <label for="promo-code">Enter discount code</label>
+      <input id="promo-code" type="text" placeholder="e.g. SAVE10" />
+      <button id="apply-promo">Apply</button>
+      <button id="clear-promo">Clear</button>
+
+      <p id="promo-message" aria-live="polite"></p>
+    </div>
+
+    <div id="test-area">
+      <h3>Test helpers</h3>
+      <p>Sample codes: <strong>SAVE10</strong> (10% off), <strong>HAWK20</strong> ($20 off), <strong>FALL5</strong> (5% off)</p>
+      <button id="add-sample-items">Load sample cart items</button>
+      <button id="run-sample-tests">Run sample promo tests (console)</button>
+    </div>
+  </div>
+
+  <script src="cart.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>
