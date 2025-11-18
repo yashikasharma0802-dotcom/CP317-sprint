@@ -17,6 +17,7 @@ Hawkshop redesign project for CP317 - Software Engineering @ Wilfrid Laurier Uni
 * JavaScript – Adds interactivity.
 
 ## Contributors 
+* Ismail Elhadi
 * Jayden Graneta
 * Yashika Sharma
 * Rabia Durrani
