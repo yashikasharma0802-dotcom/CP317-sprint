@@ -498,3 +498,10 @@ nav .fa-solid{
 .remove-from-wishlist:hover {
   background: #7a0000;
 }
+
+
+/*review card*/
+.layer p {
+    color: #fff;
+    margin-bottom: 10px;
+}
