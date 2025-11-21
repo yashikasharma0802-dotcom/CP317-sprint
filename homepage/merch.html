@@ -10,7 +10,6 @@ Apparel & Merch product section for Hawk Shop - Wilfrid Laurier Bookstore
     <title>Course Materials - HawkShop</title>
     <!-- fontawesome icon libary -->
     <script src="https://kit.fontawesome.com/b551428bdf.js" crossorigin="anonymous"></script>
-    <script src="review.js"></script>
     <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -20,6 +19,29 @@ Apparel & Merch product section for Hawk Shop - Wilfrid Laurier Bookstore
 
 <!-- Nav bar -->
 
+<!-- review -->
+<div id="review-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <h2 id="review-product-title"></h2>
+
+        <label for="review-rating">Rating:</label>
+        <select id="review-rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label for="review-text">Review:</label>
+        <textarea id="review-text" rows="4"></textarea>
+
+        <button id="submit-review">Submit Review</button>
+        <button id="close-review">Close</button>
+    </div>
+</div>
+
+    
 <div id="header">
     <div class="container">
         <nav>
@@ -435,6 +457,7 @@ nav a i {
 </script>
 <script src="cart.js"></script>
 <script src="wishlist.js"></script>
+<script src="review.js"></script>
 
 </body>
 </html>
