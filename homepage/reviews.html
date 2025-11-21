@@ -10,7 +10,29 @@
 </head>
 <body>
 
-<!-- NAV BAR (copy from your teammate’s pages) -->
+<!-- Review Modal -->
+<div id="review-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <h2 id="review-product-title"></h2>
+
+        <label for="review-rating">Rating:</label>
+        <select id="review-rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label for="review-text">Review:</label>
+        <textarea id="review-text" rows="4"></textarea>
+
+        <button id="submit-review">Submit Review</button>
+        <button id="close-review">Close</button>
+    </div>
+</div>
+
+<!-- NAV BAR  -->
 <div id="header">
     <div class="container">
         <nav>
