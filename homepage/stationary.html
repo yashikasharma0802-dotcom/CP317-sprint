@@ -85,9 +85,11 @@ Course Materials product section for Hawk Shop - Wilfrid Laurier Bookstore
                     <p>Casio</p>
                     <p class="price">$79.99</p>
                     <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
-                    <button class="add-to-cart" data-id="stat-calc-1" data-name="Scientific Calculator" data-price="79.99" data-image="images/stationary/calc.jpg">Add to Cart</button>
-                    <button class="add-to-wishlist">Add to Wishlist</button>
-                    <button class="leave-review" data-product="Scientific Calculator">Leave Review</button>
+                    <div class="product-btn-group">
+                        <button class="product-btn add-to-cart" data-id="stat-calc-1" data-name="Scientific Calculator" data-price="79.99" data-image="images/stationary/calc.jpg">Add to Cart</button>
+                        <button class="product-btn add-to-wishlist">Add to Wishlist</button>
+                        <button class="product-btn leave-review" data-product="Scientific Calculator">Leave Review</button>
+                    </div>
                 </div>
             </div>
             <div class="work">
@@ -97,9 +99,11 @@ Course Materials product section for Hawk Shop - Wilfrid Laurier Bookstore
                     <p>Wilfrid Laurier Univeristy Merchandise</p>
                     <p class="price">$4.99</p>
                     <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
-                    <button class="add-to-cart" data-id="stat-pen-1" data-name="Metal Ball Point Pen" data-price="4.99" data-image="images/stationary/pen.jpg">Add to Cart</button>
-                    <button class="add-to-wishlist">Add to Wishlist</button>
-                    <button class="leave-review" data-product="Metal Ball Point Pen">Leave Review</button>
+                    <div class="product-btn-group">
+                        <button class="product-btn add-to-cart" data-id="stat-pen-1" data-name="Metal Ball Point Pen" data-price="4.99" data-image="images/stationary/pen.jpg">Add to Cart</button>
+                        <button class="product-btn add-to-wishlist">Add to Wishlist</button>
+                        <button class="product-btn leave-review" data-product="Metal Ball Point Pen">Leave Review</button>
+                    </div>
                 </div>
             </div>
             <div class="work">
@@ -109,9 +113,11 @@ Course Materials product section for Hawk Shop - Wilfrid Laurier Bookstore
                     <p>Apple</p>
                     <p class="price">$29.99</p>
                     <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
-                    <button class="add-to-cart" data-id="stat-earpods-1" data-name="USC Type-C Earpods" data-price="29.99" data-image="images/stationary/earpods.jpg">Add to Cart</button>
-                    <button class="add-to-wishlist">Add to Wishlist</button>
-                    <button class="leave-review" data-product="USC Type-C Earpods">Leave Review</button>
+                    <div class="product-btn-group">
+                        <button class="product-btn add-to-cart" data-id="stat-earpods-1" data-name="USC Type-C Earpods" data-price="29.99" data-image="images/stationary/earpods.jpg">Add to Cart</button>
+                        <button class="product-btn add-to-wishlist">Add to Wishlist</button>
+                        <button class="product-btn leave-review" data-product="USC Type-C Earpods">Leave Review</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -330,39 +336,32 @@ nav a i {
 }
 
 
-.btn{ 
-    display: block; 
-    margin: 50px auto;   
-    width: fit-content;
-    border: 1px solid #1172f1;
-    padding: 14px 50px;
-    border-radius: 6px;
-    text-decoration: none;
-    color: #fff;
-    transition: background 0.5s;
+.product-btn {
+    background-color: #1172f1;
+    color: white;
+    border: none;
+    padding: 8px 16px;      
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+    width: 140px;           
+    display: block;
+    margin: 0 auto;
 }
 
-.btn:hover{
-    background: #1172f1;
+
+.product-btn:hover {
+    background-color: #0b5cc2;
+    transform: translateY(-2px);
 }
 
-.add-to-wishlist {
-      background-color: #1172f1;   
-      color: white;               
-      border: none;               
-      padding: 10px 20px;          
-      border-radius: 8px;          
-      font-size: 16px;             
-      cursor: pointer;             
-      transition: background-color 0.3s ease; 
-}
-
-.add-to-wishlist:hover {
-    background-color: #0b5cc2;   
-}
-
-.layer a + .add-to-wishlist {
-    margin-top: 25px; 
+.product-btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;         
+    margin-top: 60px;   
+    align-items: center;
 }
 
 @media only screen and (max-width:600px){
