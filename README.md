@@ -7,7 +7,7 @@ Hawkshop redesign project for CP317 - Software Engineering @ Wilfrid Laurier Uni
 * Milestone 02 - Requirements & Backlog Expansion: [Check it out here!!](https://docs.google.com/document/d/1I_LmVETYzzndohl0Mc9gt9XwJVvtbBRorB-BesyE6FM/edit?usp=sharing)
 * Sprint 01 - Implementation and Initial Prototype:  [Check it out here!!](https://docs.google.com/document/d/18wHyvy0dE3gGCLrC-eCBtQY1MdR3Nutv8nHjOEChsrY/edit?usp=sharing)
 * Sprint 02 - Feature Enhancement and Integration: [Check it out here!!](https://docs.google.com/document/d/1yfTT186__aS7USeRqsJd9zHJvChIHXB8snddRajtrHw/edit?usp=sharing)
-* Sprint 03 -
+* Sprint 03 - System Integration and Final Delivery Planning: [Check it out here!!](https://docs.google.com/document/d/1cTyEAfOen8oJJEWzHYoLEB_rXopLcJXW7OvHbO26FM0/edit?usp=sharing)
 * Final Project - 
 
 ## Technologies
@@ -19,6 +19,10 @@ Hawkshop redesign project for CP317 - Software Engineering @ Wilfrid Laurier Uni
 ## Contributors 
 * Jayden Graneta
 * Yashika Sharma
+* Rabia Durrani
+* Ravishan Thanarajah
+* Ismail Elhadi
+
 
 ## Sources
 

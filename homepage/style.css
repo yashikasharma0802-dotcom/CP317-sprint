@@ -726,4 +726,33 @@ nav .fa-solid{
 .empty-state p {
     font-size: 16px;
     margin-bottom: 30px;
+
+/* Reviews page card styling */
+.review-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.reviews-page h1 {
+    margin-bottom: 30px;
+}
+
+.review-card h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.review-card p {
+    margin: 5px 0;
+}
+
+.review-card small {
+    display: block;
+    margin-top: 10px;
+    color: #777;
 }

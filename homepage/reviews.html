@@ -1,25 +1,15 @@
-<!-- 
-Apparel & Merch product section for Hawk Shop - Wilfrid Laurier Bookstore
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Materials - HawkShop</title>
-    <!-- fontawesome icon libary -->
+    <title>Reviews - HawkShop</title>
     <script src="https://kit.fontawesome.com/b551428bdf.js" crossorigin="anonymous"></script>
-    <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-/>
+    <script src="reviews.js" defer></script>
 </head>
-<body>
+<body class="reviews-page">
 
-<!-- Nav bar -->
-
-<!-- review -->
+<!-- Review Modal -->
 <div id="review-modal" class="modal" style="display:none;">
     <div class="modal-content">
         <h2 id="review-product-title"></h2>
@@ -41,11 +31,11 @@ Apparel & Merch product section for Hawk Shop - Wilfrid Laurier Bookstore
     </div>
 </div>
 
-    
+<!-- NAV BAR  -->
 <div id="header">
     <div class="container">
         <nav>
-            <img src="images/logos/hawkshop.png" alt="logo" class="logo">
+            <img src="images/logos/hawkshop.png" class="logo">
 
             <ul id="sidemenu">
                 <li><a href="index.html">Home</a></li>
@@ -59,72 +49,23 @@ Apparel & Merch product section for Hawk Shop - Wilfrid Laurier Bookstore
             </ul>
 
             <a href="search.html"><i class="fa-brands fa-searchengin"></i></a>
-            <a href="checkout.html" id="cart-link"><i class="fa fa-cart-shopping"></i></a>
-            <a href=""><i class="fa-regular fa-user"></i></a>
+            <a><i class="fa fa-cart-shopping"></i></a>
+
             <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
     </div>
 </div>
 
-<div class="section-divider"></div>
+<h1 style="text-align:center; margin-top:40px;">Product Reviews</h1>
 
-<!------------------ Apparel & Merch product Section ------------------------->
+<div class="work-list" id="review-list"></div>
 
-<div id="course">
-    <div class="container">
-        <h1 class="sub-title">Apparel & Merch</h1>
-        <div class="work-list">
-            <div class="work">
-                <img src="images/merch/hoodie.jpg" alt="hoodie1">
-                <div class="layer">
-                    <h3>Laurier Pull over hoodie</h3>
-                    <p>Wilfrid Laurier Univeristy Merchandise</p>
-                    <p class="price">$64.50</p>
-                    <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
-                    <div class="product-btn-group">
-                        <button class="product-btn add-to-cart" data-id="merch-hoodie-1" data-name="Laurier Pullover Hoodie" data-price="64.5" data-image="images/merch/hoodie.jpg">Add to Cart</button>
-                        <button class="product-btn add-to-wishlist">Add to Wishlist</button>
-                        <button class="product-btn leave-review" data-product="Laurier Pull over hoodie">
-                            Leave Review
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="work">
-                <img src="images/merch/crewneck.jpg" alt="crewneck1">
-                <div class="layer">
-                    <h3>Midas Crewneck Sweater</h3>
-                    <p>Wilfrid Laurier Univeristy Merchandise</p>
-                    <p class="price">$39.99</p>
-                    <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
-                    <div class="product-btn-group">
-                        <button class="product-btn add-to-cart" data-id="merch-crewneck-1" data-name="Midas Crewneck Sweater" data-price="39.99" data-image="images/merch/crewneck.jpg">Add to Cart</button>
-                        <button class="product-btn add-to-wishlist">Add to Wishlist</button>
-                        <button class="product-btn leave-review" data-product="Midas Crewneck Sweater">Leave Review</button>
-                        </div>
-                </div>
-            </div>
-            <div class="work">
-                <img src="images/merch/quarterzip.jpg" alt="quarter1">
-                <div class="layer">
-                    <h3>Laurier Quarter-Zip Sweater</h3>
-                    <p>Wilfrid Laurier Univeristy Merchandise</p>
-                    <p class="price">$54.99</p>
-                    <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
-                    <div class="product-btn-group">
-                        <button class="product-btn add-to-cart" data-id="merch-quarterzip-1" data-name="Laurier Quarter-Zip Sweater" data-price="54.99" data-image="images/merch/quarterzip.jpg">Add to Cart</button>
-                        <button class="product-btn add-to-wishlist">Add to Wishlist</button>
-                        <button class="product-btn leave-review" data-product="Laurier Quarter-Zip Sweater">Leave Review</button>
-                        </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+<script src="reviews.js"></script>
+</body>
+</html>
 
 <style>
-*{
+    *{
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
@@ -307,7 +248,6 @@ nav a i {
     text-align: center;
     font-size: 14px;
     transition: height 0.5s;
-    
 
 }
 
@@ -335,34 +275,40 @@ nav a i {
 }
 
 
-.product-btn {
-    background-color: #1172f1;
-    color: white;
-    border: none;
-    padding: 8px 16px;      
-    border-radius: 8px;
-    font-size: 13px;
-    cursor: pointer;
-    transition: background-color 0.25s ease, transform 0.2s ease;
-    width: 140px;           
-    display: block;
-    margin: 0 auto;
+.btn{ 
+    display: block; 
+    margin: 50px auto;   
+    width: fit-content;
+    border: 1px solid #1172f1;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
 }
 
-
-.product-btn:hover {
-    background-color: #0b5cc2;
-    transform: translateY(-2px);
+.btn:hover{
+    background: #1172f1;
 }
 
-.product-btn-group {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;         
-    margin-top: 60px;   
-    align-items: center;
+.add-to-wishlist {
+      background-color: #1172f1;   
+      color: white;               
+      border: none;               
+      padding: 10px 20px;          
+      border-radius: 8px;          
+      font-size: 16px;             
+      cursor: pointer;             
+      transition: background-color 0.3s ease; 
 }
 
+.add-to-wishlist:hover {
+    background-color: #0b5cc2;   
+}
+
+.layer a + .add-to-wishlist {
+    margin-top: 25px; 
+}
 
 @media only screen and (max-width:600px){
 
@@ -439,10 +385,40 @@ nav a i {
     }
 }
 
+/* review cards */
+
+.review-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.reviews-page h1 {
+    margin-bottom: 30px;
+}
+
+.review-card h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.review-card p {
+    margin: 5px 0;
+}
+
+.review-card small {
+    display: block;
+    margin-top: 10px;
+    color: #777;
+}
 
 </style>
 
-<!-- Script -->
+<!-- script seciton -->
  <script>
     var sidemenu = document.getElementById('sidemenu');
     
@@ -455,9 +431,3 @@ nav a i {
     }
 
 </script>
-<script src="cart.js"></script>
-<script src="wishlist.js"></script>
-<script src="reviews.js"></script>
-
-</body>
-</html>

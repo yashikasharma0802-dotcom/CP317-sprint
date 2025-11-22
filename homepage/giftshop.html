@@ -17,6 +17,27 @@ Giftshop product section for Hawk Shop - Wilfrid Laurier Bookstore
 </head>
 <body>
 
+<div id="review-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <h2 id="review-product-title"></h2>
+
+        <label for="review-rating">Rating:</label>
+        <select id="review-rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label for="review-text">Review:</label>
+        <textarea id="review-text" rows="4"></textarea>
+
+        <button id="submit-review">Submit Review</button>
+        <button id="close-review">Close</button>
+    </div>
+</div>
+
 <!-- Nav bar -->
 
 <div id="header">
@@ -56,8 +77,10 @@ Giftshop product section for Hawk Shop - Wilfrid Laurier Bookstore
                     <p>Wilfrid Laurier Univeristy Merchandise</p>
                     <p class="price">$49.99</p>
                     <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
-                    <button class="add-to-cart" data-id="gift-ring-1" data-name="Laurier Steerling Silver Ring" data-price="49.99" data-image="images/giftshop/LaurierRing.jpg">Add to Cart</button>
-                    <button class="add-to-wishlist">Add to Wishlist</button>
+                    <div class="product-btn-group">
+                        <button class=" product-btn" data-id="gift-ring-1" data-name="Laurier Steerling Silver Ring" data-price="49.99" data-image="images/giftshop/LaurierRing.jpg">Add to Cart</button>
+                        <button class="product-btn add-to-wishlist">Add to Wishlist</button>
+                    </div>
                 </div>
             </div>
             <div class="work">
@@ -67,8 +90,10 @@ Giftshop product section for Hawk Shop - Wilfrid Laurier Bookstore
                     <p>Wilfrid Laurier Univeristy Merchandise</p>
                     <p class="price">$24.99</p>
                     <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
-                    <button class="add-to-cart" data-id="gift-bear-1" data-name="Laurier Shirt Bear" data-price="24.99" data-image="images/giftshop/LaurierBear.jpg">Add to Cart</button>
-                    <button class="add-to-wishlist">Add to Wishlist</button>
+                    <div class="product-btn-group">
+                        <button class="product-btn add-to-cart" data-id="gift-bear-1" data-name="Laurier Shirt Bear" data-price="24.99" data-image="images/giftshop/LaurierBear.jpg">Add to Cart</button>
+                        <button class="product-btn add-to-wishlist">Add to Wishlist</button>
+                    </div>
                 </div>
             </div>
             <div class="work">
@@ -78,8 +103,10 @@ Giftshop product section for Hawk Shop - Wilfrid Laurier Bookstore
                     <p>Wilfrid Laurier Univeristy Merchandise</p>
                     <p class="price">$34.99</p>
                     <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
-                    <button class="add-to-cart" data-id="gift-flask-1" data-name="Laurier Embossed Silver Flask" data-price="34.99" data-image="images/giftshop/LaurierFlask.jpg">Add to Cart</button>
-                    <button class="add-to-wishlist">Add to Wishlist</button>
+                    <div class="product-btn-group">
+                        <button class="product-btn add-to-cart" data-id="gift-flask-1" data-name="Laurier Embossed Silver Flask" data-price="34.99" data-image="images/giftshop/LaurierFlask.jpg">Add to Cart</button>
+                        <button class="product-btn add-to-wishlist">Add to Wishlist</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -296,39 +323,32 @@ nav a i {
 }
 
 
-.btn{ 
-    display: block; 
-    margin: 50px auto;   
-    width: fit-content;
-    border: 1px solid #1172f1;
-    padding: 14px 50px;
-    border-radius: 6px;
-    text-decoration: none;
-    color: #fff;
-    transition: background 0.5s;
+.product-btn {
+    background-color: #1172f1;
+    color: white;
+    border: none;
+    padding: 8px 16px;      
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+    width: 140px;           
+    display: block;
+    margin: 0 auto;
 }
 
-.btn:hover{
-    background: #1172f1;
+
+.product-btn:hover {
+    background-color: #0b5cc2;
+    transform: translateY(-2px);
 }
 
-.add-to-wishlist {
-      background-color: #1172f1;   
-      color: white;               
-      border: none;               
-      padding: 10px 20px;          
-      border-radius: 8px;          
-      font-size: 16px;             
-      cursor: pointer;             
-      transition: background-color 0.3s ease; 
-}
-
-.add-to-wishlist:hover {
-    background-color: #0b5cc2;   
-}
-
-.layer a + .add-to-wishlist {
-    margin-top: 25px; 
+.product-btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;         
+    margin-top: 60px;   
+    align-items: center;
 }
 
 @media only screen and (max-width:600px){
@@ -424,6 +444,6 @@ nav a i {
 </script>
 <script src="wishlist.js"></script>
 <script src="cart.js"></script>
-
+<script src="reviews.js"></script>
 </body>
 </html>

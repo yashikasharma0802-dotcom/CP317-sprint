@@ -31,6 +31,7 @@ Course Materials product section for Hawk Shop - Wilfrid Laurier Bookstore
                 <li><a href="stationary.html">Stationary & Tech</a></li>
                 <li><a href="giftshop.html">Giftshop</a></li>
                 <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
                 <i class="fa-solid fa-rectangle-xmark" onclick="closemenu()"></i>
             </ul>
 
@@ -44,6 +45,30 @@ Course Materials product section for Hawk Shop - Wilfrid Laurier Bookstore
 
 <div class="section-divider"></div>
 
+
+<!------------------ review ------------------------->
+    
+<div id="review-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <h2 id="review-product-title"></h2>
+
+        <label for="review-rating">Rating:</label>
+        <select id="review-rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label for="review-text">Review:</label>
+        <textarea id="review-text" rows="4"></textarea>
+
+        <button id="submit-review">Submit Review</button>
+        <button id="close-review">Close</button>
+    </div>
+</div>
+    
 <!------------------ Course Materials product Section ------------------------->
 
 <div id="course">
@@ -420,6 +445,7 @@ nav a i {
 
 </script>
 <script src="wishlist.js"></script>
-
+<script src="reviews.js"></script>
+    
 </body>
 </html>
