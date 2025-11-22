@@ -167,20 +167,20 @@
       switch (dateValue) {
         case '30days':
           startDate.setDate(now.getDate() - 30);
+          filtered = filtered.filter(order => new Date(order.date) >= startDate);
           break;
         case '90days':
           startDate.setDate(now.getDate() - 90);
+          filtered = filtered.filter(order => new Date(order.date) >= startDate);
           break;
         case '6months':
           startDate.setMonth(now.getMonth() - 6);
+          filtered = filtered.filter(order => new Date(order.date) >= startDate);
           break;
         case 'year':
           startDate.setFullYear(now.getFullYear() - 1);
+          filtered = filtered.filter(order => new Date(order.date) >= startDate);
           break;
-      }
-      
-      if (dateValue !== 'all') {
-        filtered = filtered.filter(order => new Date(order.date) >= startDate);
       }
     }
 
