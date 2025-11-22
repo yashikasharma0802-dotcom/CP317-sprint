@@ -40,40 +40,33 @@ if (list) {
     let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
 
     reviews.forEach(r => {
-        // Card container
-        let card = document.createElement("div");
-        card.className = "work";
+    // Card container for reviews 
+    let card = document.createElement("div");
+    card.className = "review-card";
 
-        // Fake image in case product doesn’t have one
-        let img = document.createElement("img");
-        img.src = "images/logos/hawkshop.png";
+    // Product Name
+    let title = document.createElement("h3");
+    title.textContent = r.product;
 
-        let layer = document.createElement("div");
-        layer.className = "layer";
+    // Star rating
+    let stars = document.createElement("p");
+    stars.innerHTML = "⭐".repeat(r.rating) + "☆".repeat(5 - r.rating);
 
-        let title = document.createElement("h3");
-        title.textContent = r.product;
+    // Review text
+    let text = document.createElement("p");
+    text.textContent = r.text || "(no written review)";
 
-        // Star rating
-        let stars = document.createElement("p");
-        stars.innerHTML = "⭐".repeat(r.rating) + "☆".repeat(5 - r.rating);
+    // Date
+    let date = document.createElement("small");
+    date.textContent = r.date;
 
-        // Review text
-        let text = document.createElement("p");
-        text.textContent = r.text || "(no written review)";
+    // Add everything to card
+    card.appendChild(title);
+    card.appendChild(stars);
+    card.appendChild(text);
+    card.appendChild(date);
 
-        // Date
-        let date = document.createElement("small");
-        date.textContent = r.date;
-
-        layer.appendChild(title);
-        layer.appendChild(stars);
-        layer.appendChild(text);
-        layer.appendChild(date);
-
-        card.appendChild(img);
-        card.appendChild(layer);
-
-        list.appendChild(card);
-    });
+    // Add card to page
+    list.appendChild(card);
+});
 }
