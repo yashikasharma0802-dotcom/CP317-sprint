@@ -500,22 +500,32 @@ nav .fa-solid{
 }
 
 
-/* review card */
-.layer p {
-    color: #fff;
+/* Reviews page card styling */
+.review-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.reviews-page h1 {
+    margin-bottom: 30px;
+}
+
+.review-card h3 {
     margin-bottom: 10px;
+    color: #333;
 }
 
-/* --- Fix review cards y --- */
-.reviews-page .layer {
-    height: auto !important;
-    padding: 20px !important;
-    background: #f9f9f9 !important; 
-    color: #333 !important;
-    position: relative !important;
+.review-card p {
+    margin: 5px 0;
 }
 
-.reviews-page .work img {
-    opacity: 0.2;
+.review-card small {
+    display: block;
+    margin-top: 10px;
+    color: #777;
 }
-
