@@ -500,8 +500,22 @@ nav .fa-solid{
 }
 
 
-/*review card*/
+/* review card */
 .layer p {
     color: #fff;
     margin-bottom: 10px;
 }
+
+/* --- Fix review cards y --- */
+.reviews-page .layer {
+    height: auto !important;
+    padding: 20px !important;
+    background: #f9f9f9 !important; 
+    color: #333 !important;
+    position: relative !important;
+}
+
+.reviews-page .work img {
+    opacity: 0.2;
+}
+
