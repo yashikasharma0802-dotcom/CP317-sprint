@@ -1,0 +1,110 @@
+[
+  {
+    "id": "ORD-2024-001",
+    "date": "2024-11-15",
+    "status": "Delivered",
+    "items": [
+      {
+        "name": "Laurier OVO Sweater",
+        "quantity": 1,
+        "price": 89.99,
+        "image": "images/topsellers/ovosweater.jpg"
+      },
+      {
+        "name": "Laurier Hoodie",
+        "quantity": 2,
+        "price": 59.99,
+        "image": "images/merch/hoodie.jpg"
+      }
+    ],
+    "total": 209.97
+  },
+  {
+    "id": "ORD-2024-002",
+    "date": "2024-11-10",
+    "status": "Shipped",
+    "items": [
+      {
+        "name": "Varsity Jacket",
+        "quantity": 1,
+        "price": 149.99,
+        "image": "images/topsellers/varsityjacket.jpg"
+      }
+    ],
+    "total": 149.99
+  },
+  {
+    "id": "ORD-2024-003",
+    "date": "2024-11-05",
+    "status": "Processing",
+    "items": [
+      {
+        "name": "Varsity Polo",
+        "quantity": 1,
+        "price": 49.99,
+        "image": "images/topsellers/poloovo.jpg"
+      },
+      {
+        "name": "Laurier T-Shirt",
+        "quantity": 3,
+        "price": 24.99,
+        "image": "images/merch/tshirt.jpg"
+      }
+    ],
+    "total": 124.96
+  },
+  {
+    "id": "ORD-2024-004",
+    "date": "2024-10-28",
+    "status": "Delivered",
+    "items": [
+      {
+        "name": "Laurier Notebook",
+        "quantity": 5,
+        "price": 12.99,
+        "image": "images/stationary/notebook.jpg"
+      },
+      {
+        "name": "Laurier Pen Set",
+        "quantity": 2,
+        "price": 15.99,
+        "image": "images/stationary/pens.jpg"
+      }
+    ],
+    "total": 96.93
+  },
+  {
+    "id": "ORD-2024-005",
+    "date": "2024-10-20",
+    "status": "Cancelled",
+    "items": [
+      {
+        "name": "Laurier Cap",
+        "quantity": 1,
+        "price": 29.99,
+        "image": "images/merch/cap.jpg"
+      }
+    ],
+    "total": 29.99
+  },
+  {
+    "id": "ORD-2024-006",
+    "date": "2024-10-12",
+    "status": "Delivered",
+    "items": [
+      {
+        "name": "Laurier Water Bottle",
+        "quantity": 2,
+        "price": 19.99,
+        "image": "images/giftshop/bottle.jpg"
+      },
+      {
+        "name": "Laurier Keychain",
+        "quantity": 1,
+        "price": 9.99,
+        "image": "images/giftshop/keychain.jpg"
+      }
+    ],
+    "total": 49.97
+  }
+]
