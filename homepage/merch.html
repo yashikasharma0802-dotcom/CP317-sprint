@@ -81,11 +81,13 @@ Apparel & Merch product section for Hawk Shop - Wilfrid Laurier Bookstore
                     <p>Wilfrid Laurier Univeristy Merchandise</p>
                     <p class="price">$64.50</p>
                     <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
-                    <button class="add-to-cart" data-id="merch-hoodie-1" data-name="Laurier Pullover Hoodie" data-price="64.5" data-image="images/merch/hoodie.jpg">Add to Cart</button>
-                    <button class="add-to-wishlist">Add to Wishlist</button>
-                    <button class="leave-review" data-product="Laurier Pull over hoodie">
-                        Leave Review
-                    </button>
+                    <div class="product-btn-group">
+                        <button class="product-btn add-to-cart" data-id="merch-hoodie-1" data-name="Laurier Pullover Hoodie" data-price="64.5" data-image="images/merch/hoodie.jpg">Add to Cart</button>
+                        <button class="product-btn add-to-wishlist">Add to Wishlist</button>
+                        <button class="product-btn leave-review" data-product="Laurier Pull over hoodie">
+                            Leave Review
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="work">
@@ -95,10 +97,11 @@ Apparel & Merch product section for Hawk Shop - Wilfrid Laurier Bookstore
                     <p>Wilfrid Laurier Univeristy Merchandise</p>
                     <p class="price">$39.99</p>
                     <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
-                    <button class="add-to-cart" data-id="merch-crewneck-1" data-name="Midas Crewneck Sweater" data-price="39.99" data-image="images/merch/crewneck.jpg">Add to Cart</button>
-                    <button class="add-to-wishlist">Add to Wishlist</button>
-                    <button class="leave-review" data-product="Midas Crewneck Sweater">Leave Review</button>
-
+                    <div class="product-btn-group">
+                        <button class="product-btn add-to-cart" data-id="merch-crewneck-1" data-name="Midas Crewneck Sweater" data-price="39.99" data-image="images/merch/crewneck.jpg">Add to Cart</button>
+                        <button class="product-btn add-to-wishlist">Add to Wishlist</button>
+                        <button class="product-btn leave-review" data-product="Midas Crewneck Sweater">Leave Review</button>
+                        </div>
                 </div>
             </div>
             <div class="work">
@@ -108,10 +111,11 @@ Apparel & Merch product section for Hawk Shop - Wilfrid Laurier Bookstore
                     <p>Wilfrid Laurier Univeristy Merchandise</p>
                     <p class="price">$54.99</p>
                     <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
-                    <button class="add-to-cart" data-id="merch-quarterzip-1" data-name="Laurier Quarter-Zip Sweater" data-price="54.99" data-image="images/merch/quarterzip.jpg">Add to Cart</button>
-                    <button class="add-to-wishlist">Add to Wishlist</button>
-                    <button class="leave-review" data-product="Laurier Quarter-Zip Sweater">Leave Review</button>
-
+                    <div class="product-btn-group">
+                        <button class="product-btn add-to-cart" data-id="merch-quarterzip-1" data-name="Laurier Quarter-Zip Sweater" data-price="54.99" data-image="images/merch/quarterzip.jpg">Add to Cart</button>
+                        <button class="product-btn add-to-wishlist">Add to Wishlist</button>
+                        <button class="product-btn leave-review" data-product="Laurier Quarter-Zip Sweater">Leave Review</button>
+                        </div>
                 </div>
             </div>
         </div>
@@ -303,6 +307,7 @@ nav a i {
     text-align: center;
     font-size: 14px;
     transition: height 0.5s;
+    
 
 }
 
@@ -330,40 +335,34 @@ nav a i {
 }
 
 
-.btn{ 
-    display: block; 
-    margin: 50px auto;   
-    width: fit-content;
-    border: 1px solid #1172f1;
-    padding: 14px 50px;
-    border-radius: 6px;
-    text-decoration: none;
-    color: #fff;
-    transition: background 0.5s;
+.product-btn {
+    background-color: #1172f1;
+    color: white;
+    border: none;
+    padding: 8px 16px;      
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+    width: 140px;           
+    display: block;
+    margin: 0 auto;
 }
 
-.btn:hover{
-    background: #1172f1;
+
+.product-btn:hover {
+    background-color: #0b5cc2;
+    transform: translateY(-2px);
 }
 
-.add-to-wishlist {
-      background-color: #1172f1;   
-      color: white;               
-      border: none;               
-      padding: 10px 20px;          
-      border-radius: 8px;          
-      font-size: 16px;             
-      cursor: pointer;             
-      transition: background-color 0.3s ease; 
+.product-btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;         
+    margin-top: 60px;   
+    align-items: center;
 }
 
-.add-to-wishlist:hover {
-    background-color: #0b5cc2;   
-}
-
-.layer a + .add-to-wishlist {
-    margin-top: 25px; 
-}
 
 @media only screen and (max-width:600px){
 
