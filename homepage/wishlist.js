@@ -41,6 +41,12 @@ if (listContainer) {
     let title = document.createElement("h3");
     title.textContent = item.name;
 
+
+    // need to add, add to cart feature on wishlist
+    let addCartBtn = document.createElement("button");
+    addCartBtn.textContent = "Add to Cart";
+    addCartBtn.className = "add-to-cart-from-wishlist";
+    
     let removeBtn = document.createElement("button");
     removeBtn.textContent = "Remove";
     removeBtn.className = "remove-from-wishlist";
@@ -53,6 +59,7 @@ if (listContainer) {
     });
 
     layer.appendChild(title);
+    layer.appendChild(addCartBtn);
     layer.appendChild(removeBtn);
     card.appendChild(img);
     card.appendChild(layer);

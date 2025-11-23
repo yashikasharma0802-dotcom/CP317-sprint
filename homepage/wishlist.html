@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Wishlist - HawkShop</title>
-
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="product.css"> 
 </head>
 <div id="header">
     <div class="container">
@@ -34,15 +33,17 @@
 
 <div class="section-divider"></div>
 
-<body>
 
-    <h1 class="sub-title">Your Wishlist</h1>
+<div id="course">
+    <div class="container">
+        <h1 class="sub-title">Wishlist</h1>
+            <div class="work-list" id="wishlist-items"></div>
 
-    <div class="work-list" id="wishlist-items"></div>
+            <script src="wishlist.js"></script>
+    </div>
+</div>
 
-    <script src="wishlist.js"></script>
-</body>
-</html>
+</html> 
 
 <style>
 /* Hide the X and hamburger unless in mobile view */
@@ -62,6 +63,67 @@
   height: 2px;
   background: #fbc212;
   margin: 20px auto 0;
+}
+
+/* currently trying to fix the css for wishlist kidna wonky cuz the way the js works i think  */
+
+.remove-from-wishlist {
+    background-color: #1172f1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: 0.3s ease;
+}
+
+.remove-from-wishlist:hover {
+    background-color: #0b5cc2;
+    transform: translateY(-2px);
+}
+
+#wishlist-items .work {
+    width: 250px;
+    height: 330px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+#wishlist-items .work img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* prevents stretched or huge images */
+}
+
+#wishlist-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px; 
+    row-gap: 10px;
+    margin: 0;
+    padding: 10px;
+    justify-items: center;
+    width: 100%;
+}
+
+.add-to-cart-from-wishlist {
+  background-color: #1172f1;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.add-to-cart-from-wishlist:hover {
+  background-color: #0b5cc2;
+  transform: translateY(-2px);
 }
 </style>
 
