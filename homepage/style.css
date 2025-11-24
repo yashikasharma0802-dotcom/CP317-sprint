@@ -460,3 +460,22 @@ nav .fa-solid{
     }
 }
 
+
+/* FIX REVIEW CARDS ON PRODUCT PAGES */
+.reviews-page .layer {
+    height: auto !important;
+    padding: 20px !important;
+    background: #f9f9f9 !important;
+    color: #333 !important;
+    position: relative !important;
+    opacity: 1 !important;
+}
+
+.reviews-page .work img {
+    width: 80px;  
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    opacity: 1 !important;
+}
+
