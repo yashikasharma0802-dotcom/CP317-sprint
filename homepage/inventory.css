@@ -1,0 +1,64 @@
+body {
+  background: #080808;
+  color: #fff;
+  font-family: Poppins, sans-serif;
+}
+
+.container {
+  width: 90%;
+  margin: 40px auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 30px;
+  opacity: 0.8;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+table th, table td {
+  border: 1px solid #444;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background: #421885;
+}
+
+.in-stock {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.low-stock {
+  color: #ff9800;
+  font-weight: bold;
+}
+
+.out-of-stock {
+  color: #f44336;
+  font-weight: bold;
+}
+
+#generate-report {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 24px;
+  background: #1172f1;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
