@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laurier Pullover Hoodie - HawkShop</title>
+
+    <link rel="stylesheet" href="../homepage/style.css">
+    <script src="https://kit.fontawesome.com/b551428bdf.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<!-- NAV BAR -->
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="../images/logos/hawkshop.png" class="logo">
+
+            <ul id="sidemenu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../coursem.html">Course Materials</a></li>
+                <li><a href="../merch.html">Apparel & Merch</a></li>
+                <li><a href="../stationary.html">Stationary & Tech</a></li>
+                <li><a href="../giftshop.html">Giftshop</a></li>
+                <li><a href="../wishlist.html">Wishlist</a></li>
+                <li><a href="../reviews.html">Reviews</a></li>
+                <i class="fa-solid fa-rectangle-xmark" onclick="closemenu()"></i>
+            </ul>
+
+            <a href="../search.html"><i class="fa-brands fa-searchengin"></i></a>
+            <a href="../checkout.html"><i class="fa fa-cart-shopping"></i></a>
+            <a href="../login.html"><i class="fa-regular fa-user"></i></a>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- PRODUCT SECTION -->
+<div class="container" style="margin-top:40px;">
+    <div style="display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start;">
+
+        <!-- PRODUCT IMAGE -->
+        <div style="flex:1;min-width:280px;">
+            <img src="../images/merch/hoodie.jpg" style="width:100%;border-radius:12px;">
+        </div>
+
+        <!-- PRODUCT INFO -->
+        <div style="flex:1;min-width:280px;">
+            <h1 class="sub-title">Laurier Pullover Hoodie</h1>
+
+            <p style="font-size:22px;color:#dcd6ff;margin-top:10px;">
+                $64.50
+            </p>
+
+            <p style="margin-top:15px;line-height:1.6;">
+                Premium Laurier fleece hoodie with embroidered university logo. Warm, durable, 
+                and perfect for everyday campus wear.
+            </p>
+
+            <br>
+
+            <!-- BUTTONS -->
+            <button class="add-to-cart"
+                data-id="merch-hoodie-1"
+                data-name="Laurier Pullover Hoodie"
+                data-price="64.50"
+                data-image="../images/merch/hoodie.jpg">
+                Add to Cart
+            </button>
+
+            <button class="add-to-wishlist" style="margin-left:10px;">
+                Add to Wishlist
+            </button>
+
+            <button class="leave-review"
+                data-product="Laurier Pullover Hoodie"
+                style="margin-left:10px;background:#421885;">
+                Leave Review
+            </button>
+
+        </div>
+    </div>
+
+    <!-- REVIEWS -->
+    <h2 style="margin-top:60px;margin-bottom:20px;">Customer Reviews</h2>
+    <div id="product-reviews" class="work-list"></div>
+</div>
+
+<!-- REVIEW MODAL -->
+<div id="review-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <h2 id="review-product-title">Laurier Pullover Hoodie</h2>
+
+        <label for="review-rating">Rating:</label>
+        <select id="review-rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label for="review-text">Review:</label>
+        <textarea id="review-text" rows="4"></textarea>
+
+        <button id="submit-review">Submit Review</button>
+        <button id="close-review">Close</button>
+    </div>
+</div>
+
+<!-- SCRIPTS -->
+<script src="../cart.js"></script>
+<script src="../wishlist.js"></script>
+<script src="../reviews.js"></script>
+<script src="../navbar.js"></script>
+
+<script>
+    // Load only hoodie reviews
+    const reviewList = document.getElementById("product-reviews");
+    const allReviews = JSON.parse(localStorage.getItem("reviews")) || [];
+    const filtered = allReviews.filter(r => r.product === "Laurier Pullover Hoodie");
+
+    filtered.forEach(r => {
+        let card = document.createElement("div");
+        card.className = "work";
+
+        let img = document.createElement("img");
+        img.src = "../images/logos/hawkshop.png";
+
+        let layer = document.createElement("div");
+        layer.className = "layer";
+
+        layer.innerHTML = `
+            <h3>${r.product}</h3>
+            <p>${"⭐".repeat(r.rating)}${"☆".repeat(5 - r.rating)}</p>
+            <p>${r.text || "(no review)"}</p>
+            <small>${r.date}</small>
+        `;
+
+        card.appendChild(img);
+        card.appendChild(layer);
+        reviewList.appendChild(card);
+    });
+</script>
+
+</body>
+</html>
