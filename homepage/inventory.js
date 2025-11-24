@@ -1,16 +1,16 @@
-// Mock inventory dataset for Sprint 3
+// Mock inventory dataset for Sprint 3 (with optional size field)
 const inventoryData = [
-  { id: "merch-hoodie-1", name: "Laurier Pullover Hoodie", stock: 12 },
-  { id: "merch-crewneck-1", name: "Midas Crewneck Sweater", stock: 7 },
-  { id: "merch-quarterzip-1", name: "Laurier Quarter-Zip Sweater", stock: 3 },
+  { id: "merch-hoodie-1", name: "Laurier Pullover Hoodie", size: "S / M / L / XL", stock: 12 },
+  { id: "merch-crewneck-1", name: "Midas Crewneck Sweater", size: "M / L / XL", stock: 7 },
+  { id: "merch-quarterzip-1", name: "Laurier Quarter-Zip Sweater", size: "L / XL", stock: 3 },
 
-  { id: "gift-ring-1", name: "Laurier Sterling Silver Ring", stock: 5 },
-  { id: "gift-bear-1", name: "Laurier Shirt Bear", stock: 0 },
-  { id: "gift-flask-1", name: "Laurier Embossed Silver Flask", stock: 15 },
+  { id: "gift-ring-1", name: "Laurier Sterling Silver Ring", size: "One Size", stock: 5 },
+  { id: "gift-bear-1", name: "Laurier Shirt Bear", size: null, stock: 0 },
+  { id: "gift-flask-1", name: "Laurier Embossed Silver Flask", size: null, stock: 15 },
 
-  { id: "stat-calc-1", name: "Scientific Calculator", stock: 0 },
-  { id: "stat-pen-1", name: "Metal Ball Point Pen", stock: 120 },
-  { id: "stat-earpods-1", name: "USC Type-C Earpods", stock: 8 }
+  { id: "stat-calc-1", name: "Scientific Calculator", size: null, stock: 0 },
+  { id: "stat-pen-1", name: "Metal Ball Point Pen", size: null, stock: 120 },
+  { id: "stat-earpods-1", name: "USC Type-C Earpods", size: null, stock: 8 }
 ];
 
 // status logic
@@ -30,6 +30,7 @@ function renderInventory() {
     tr.innerHTML = `
       <td>${item.name}</td>
       <td>${item.id}</td>
+      <td>${item.size ? item.size : "—"}</td>
       <td>${item.stock}</td>
       <td class="${getStatus(item.stock).replace(" ", "-").toLowerCase()}">
         ${getStatus(item.stock)}
