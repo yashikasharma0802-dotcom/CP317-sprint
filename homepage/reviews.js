@@ -1,72 +1,90 @@
-// --------------------
-// 1. Leave Review Button
-// --------------------
+// =======================================
+// 0. Modal Elements
+// =======================================
+const modal = document.getElementById("review-modal");
+const closeBtn = document.getElementById("close-review");
+const submitBtn = document.getElementById("submit-review");
+const productTitle = document.getElementById("review-product-title");
+
+const ratingSelect = document.getElementById("review-rating");
+const reviewText = document.getElementById("review-text");
+
+let currentProduct = null;
+
+// =======================================
+// 1. Leave Review Button → open modal
+// =======================================
 const reviewButtons = document.querySelectorAll(".leave-review");
 
 reviewButtons.forEach(btn => {
-    btn.addEventListener("click", function () {
-        let product = this.getAttribute("data-product");
+    btn.addEventListener("click", () => {
+        currentProduct = btn.getAttribute("data-product");
 
-        let rating = prompt("Rate this product (1–5 stars):");
-        rating = parseInt(rating);
+        // Set modal title (product name)
+        productTitle.textContent = currentProduct;
 
-        if (isNaN(rating) || rating < 1 || rating > 5) {
-            alert("Invalid rating.");
-            return;
-        }
+        // Reset fields
+        ratingSelect.value = "5";
+        reviewText.value = "";
 
-        let reviewText = prompt("Write a short review (optional):") || "";
+        modal.style.display = "flex";
+    });
+});
+
+// =======================================
+// 2. Close Modal
+// =======================================
+if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+}
+
+// =======================================
+// 3. Submit Review
+// =======================================
+if (submitBtn) {
+    submitBtn.addEventListener("click", () => {
+        let rating = parseInt(ratingSelect.value);
+        let text = reviewText.value.trim();
 
         let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
 
         reviews.push({
-            product: product,
+            product: currentProduct,
             rating: rating,
-            text: reviewText,
+            text: text,
             date: new Date().toLocaleString()
         });
 
         localStorage.setItem("reviews", JSON.stringify(reviews));
-        alert("Thanks! Your review was submitted.");
+
+        modal.style.display = "none";
+        alert("Your review was submitted!");
+        location.reload(); // Refresh product page to show new review
     });
-});
+}
 
-// --------------------
-// 2. Display All Reviews (reviews.html)
-// --------------------
-let list = document.getElementById("review-list");
+// =======================================
+// 4. Reviews Page (reviews.html)
+// Display ALL reviews
+// =======================================
+const reviewListPage = document.getElementById("review-list");
 
-if (list) {
+if (reviewListPage) {
     let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
 
     reviews.forEach(r => {
-    // Card container for reviews 
-    let card = document.createElement("div");
-    card.className = "review-card";
+        let card = document.createElement("div");
+        card.className = "review-card";
 
-    // Product Name
-    let title = document.createElement("h3");
-    title.textContent = r.product;
+        card.innerHTML = `
+            <h3>${r.product}</h3>
+            <p>${"⭐".repeat(r.rating)}${"☆".repeat(5 - r.rating)}</p>
+            <p>${r.text || "(no written review)"}</p>
+            <small>${r.date}</small>
+        `;
 
-    // Star rating
-    let stars = document.createElement("p");
-    stars.innerHTML = "⭐".repeat(r.rating) + "☆".repeat(5 - r.rating);
-
-    // Review text
-    let text = document.createElement("p");
-    text.textContent = r.text || "(no written review)";
-
-    // Date
-    let date = document.createElement("small");
-    date.textContent = r.date;
-
-    // Add everything to card
-    card.appendChild(title);
-    card.appendChild(stars);
-    card.appendChild(text);
-    card.appendChild(date);
-
-    // Add card to page
-    list.appendChild(card);
-});
+        reviewListPage.appendChild(card);
+    });
 }
