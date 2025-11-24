@@ -78,7 +78,14 @@
                 Add to Cart
             </button>
 
-            <button class="add-to-wishlist" style="margin-left:10px;">Add to Wishlist</button>
+            <button class="add-to-wishlist"
+                data-id="stationary-calc-1"
+                data-name="Texas Instruments Scientific Calculator"
+                data-price="19.99"
+                data-image="images/stationary/calc.jpg"
+                style="margin-left:10px;">
+                Add to Wishlist
+            </button>
 
             <button class="leave-review"
                 data-product="Texas Instruments Scientific Calculator"
@@ -117,15 +124,19 @@
 </div>
 
 <!-- SCRIPTS -->
+<script src="navbar.js"></script>
 <script src="cart.js"></script>
 <script src="wishlist.js"></script>
 <script src="reviews.js"></script>
-<script src="navbar.js"></script>
 
 <script>
+    // Display reviews for this specific product
     const reviewList = document.getElementById("product-reviews");
     const allReviews = JSON.parse(localStorage.getItem("reviews")) || [];
-    const filtered = allReviews.filter(r => r.product === "Texas Instruments Scientific Calculator");
+
+    const filtered = allReviews.filter(r =>
+        r.product === "Texas Instruments Scientific Calculator"
+    );
 
     filtered.forEach(r => {
         let card = document.createElement("div");
@@ -152,4 +163,3 @@
 
 </body>
 </html>
-
