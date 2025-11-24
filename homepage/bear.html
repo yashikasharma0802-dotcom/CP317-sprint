@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Laurier Plush Bear - HawkShop</title>
 
-    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
-
     <script src="https://kit.fontawesome.com/b551428bdf.js" crossorigin="anonymous"></script>
 
     <style>
@@ -28,7 +26,6 @@
     <div class="container">
         <nav>
             <img src="images/logos/hawkshop.png" class="logo">
-
             <ul id="sidemenu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="coursem.html">Course Materials</a></li>
@@ -60,9 +57,7 @@
 
         <div style="flex:1;min-width:280px;">
             <h1 class="sub-title">Laurier Plush Bear</h1>
-
             <p style="font-size:22px;color:#dcd6ff;margin-top:10px;">$24.99</p>
-
             <p style="margin-top:15px;line-height:1.6;">
                 Soft and adorable Laurier plush bear wearing a purple sweater with the university logo.
                 Makes a perfect gift for students, alumni, or kids.
@@ -125,36 +120,90 @@
 <!-- SCRIPTS -->
 <script src="cart.js"></script>
 <script src="wishlist.js"></script>
-<script src="reviews.js"></script>
 <script src="navbar.js"></script>
 
-<!-- Product-specific reviews display -->
 <script>
-    const reviewList = document.getElementById("product-reviews");
-    const allReviews = JSON.parse(localStorage.getItem("reviews")) || [];
-    const filtered = allReviews.filter(r => r.product === "Laurier Plush Bear");
+// ===== Reviews Modal Functionality =====
+const leaveButtons = document.querySelectorAll(".leave-review");
+const modal = document.getElementById("review-modal");
+const productTitle = document.getElementById("review-product-title");
+const submitBtn = document.getElementById("submit-review");
+const closeBtn = document.getElementById("close-review");
+const reviewText = document.getElementById("review-text");
+const reviewRating = document.getElementById("review-rating");
+const reviewList = document.getElementById("product-reviews");
 
-    filtered.forEach(r => {
-        let card = document.createElement("div");
-        card.className = "work";
+// Open modal
+leaveButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const product = btn.getAttribute("data-product");
+        productTitle.textContent = product;
+        modal.style.display = "block";
+    });
+});
 
-        let img = document.createElement("img");
-        img.src = "images/logos/hawkshop.png";
+// Close modal
+closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+});
 
-        let layer = document.createElement("div");
-        layer.className = "layer";
+// Submit review
+submitBtn.addEventListener("click", () => {
+    const product = productTitle.textContent;
+    const rating = parseInt(reviewRating.value);
+    const text = reviewText.value.trim();
 
-        layer.innerHTML = `
+    if (isNaN(rating) || rating < 1 || rating > 5) {
+        alert("Invalid rating");
+        return;
+    }
+
+    const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+    const newReview = {
+        product: product,
+        rating: rating,
+        text: text,
+        date: new Date().toLocaleString()
+    };
+    reviews.push(newReview);
+    localStorage.setItem("reviews", JSON.stringify(reviews));
+
+    // Add new review card immediately
+    const card = document.createElement("div");
+    card.className = "work";
+    card.innerHTML = `
+        <img src="images/logos/hawkshop.png">
+        <div class="layer">
+            <h3>${newReview.product}</h3>
+            <p>${"⭐".repeat(newReview.rating)}${"☆".repeat(5 - newReview.rating)}</p>
+            <p>${newReview.text || "(no review)"}</p>
+            <small>${newReview.date}</small>
+        </div>
+    `;
+    reviewList.appendChild(card);
+
+    // Reset and close modal
+    reviewText.value = "";
+    modal.style.display = "none";
+});
+
+// ===== Display existing reviews =====
+const allReviews = JSON.parse(localStorage.getItem("reviews")) || [];
+const filtered = allReviews.filter(r => r.product === "Laurier Plush Bear");
+filtered.forEach(r => {
+    const card = document.createElement("div");
+    card.className = "work";
+    card.innerHTML = `
+        <img src="images/logos/hawkshop.png">
+        <div class="layer">
             <h3>${r.product}</h3>
             <p>${"⭐".repeat(r.rating)}${"☆".repeat(5 - r.rating)}</p>
             <p>${r.text || "(no review)"}</p>
             <small>${r.date}</small>
-        `;
-
-        card.appendChild(img);
-        card.appendChild(layer);
-        reviewList.appendChild(card);
-    });
+        </div>
+    `;
+    reviewList.appendChild(card);
+});
 </script>
 
 </body>
