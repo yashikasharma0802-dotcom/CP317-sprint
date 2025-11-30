@@ -41,6 +41,25 @@
             <a href="checkout.html"><i class="fa fa-cart-shopping"></i></a>
             <a href="login.html"><i class="fa-regular fa-user"></i></a>
             <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+
+            <span id="auth-buttons"></span>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const user = Auth && typeof Auth.currentUser === "function" ? Auth.currentUser() : null;
+    const authArea = document.getElementById("auth-buttons");
+
+    if (user) {
+      authArea.innerHTML = `<button id="logoutBtn" style="margin-left:10px;cursor:pointer;">Sign out</button>`;
+      document.getElementById("logoutBtn").addEventListener("click", () => {
+        Auth.logout();
+        window.location.reload();
+      });
+    } else {
+      authArea.innerHTML = `<a href="login.html" style="margin-left:10px;">Sign in / Register</a>`;
+    }
+  });
+</script> 
+            
         </nav>
     </div>
 </div>
@@ -208,3 +227,4 @@ filtered.forEach(r => {
 
 </body>
 </html>
+
