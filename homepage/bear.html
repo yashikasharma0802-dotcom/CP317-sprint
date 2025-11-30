@@ -41,8 +41,10 @@
             <a href="checkout.html"><i class="fa fa-cart-shopping"></i></a>
             <a href="login.html"><i class="fa-regular fa-user"></i></a>
             <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+              <span id="auth-ui" style="margin-left:10px;"></span>
+            
+        </nav>
 
-            <span id="auth-buttons"></span>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const user = Auth && typeof Auth.currentUser === "function" ? Auth.currentUser() : null;
@@ -59,8 +61,7 @@
     }
   });
 </script> 
-            
-        </nav>
+        
     </div>
 </div>
 
@@ -227,4 +228,5 @@ filtered.forEach(r => {
 
 </body>
 </html>
+
 
