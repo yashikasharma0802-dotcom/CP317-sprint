@@ -1,60 +1,137 @@
+<!-- 
+ Homepage for Hawk Shop - Wilfrid Laurier Bookstore
+-->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>University Store</title>
-  <style>
-    body { font-family: Arial; padding: 20px; background: #f8f8f8; }
-    h2 { margin-bottom: 10px; }
-    input, select { padding: 8px; margin-right: 10px; }
-    .item { 
-      padding: 10px; 
-      margin: 10px 0; 
-      background: white; 
-      border-radius: 6px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .category { font-size: 0.9em; color: #666; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hawk Shop - Wilfrid Laurier Bookstore</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- fontawesome icon libary -->
+    <script src="https://kit.fontawesome.com/b551428bdf.js" crossorigin="anonymous"></script>
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+/>
 </head>
 <body>
-  <h2>University Store Search</h2>
-  
-  <input type="text" id="search" placeholder="Search items...">
-  <select id="filter">
-    <option value="all">All Categories</option>
-    <option value="books">Books</option>
-    <option value="clothing">Clothing</option>
-    <option value="stationery">Stationery</option>
-  </select>
+<!------------------ Home page / Header section ------------------------->
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/logos/hawkshop.png" alt="logo" class="logo">
 
-  <div id="storeItems">
-    <div class="item" data-category="books">Data Structures Textbook <span class="category">(Books)</span></div>
-    <div class="item" data-category="books">Discrete Mathematics by Rosen <span class="category">(Books)</span></div>
-    <div class="item" data-category="clothing">University Hoodie <span class="category">(Clothing)</span></div>
-    <div class="item" data-category="clothing">Campus T-Shirt <span class="category">(Clothing)</span></div>
-    <div class="item" data-category="stationery">Mechanical Pencil <span class="category">(Stationery)</span></div>
-    <div class="item" data-category="stationery">Scientific Calculator <span class="category">(Stationery)</span></div>
-    <div class="item" data-category="stationery">Notebook Pack <span class="category">(Stationery)</span></div>
-  </div>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="coursem.html">Course Materials</a></li>
+                <li><a href="merch.html">Apparel & Merch</a></li>
+                <li><a href="stationary.html">Stationary & Tech</a></li>
+                <li><a href="giftshop.html">Giftshop</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="order-history.html">My Orders</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="inventory.html">Inventory Report</a></li>
+                <i class="fa-solid fa-rectangle-xmark" onclick="closemenu()"></i>
+            </ul>
 
-  <script>
-    const searchInput = document.getElementById("search");
-    const filterSelect = document.getElementById("filter");
-    const items = document.querySelectorAll(".item");
+            <a href="search.html"><i class="fa-brands fa-searchengin"></i></a>
+            <a href="checkout.html" id="cart-link"><i class="fa fa-cart-shopping"></i></a>
+            <a href=""><i class="fa-regular fa-user"></i></a> 
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div>
+            <div class="header-main">
+                <div class="header-text">
+                  <h1>Welcome to the <br><span>Hawkshop</span>!!</h1>
+        </div>
+    </div>
+</div>
 
-    function filterItems() {
-      const term = searchInput.value.toLowerCase();
-      const category = filterSelect.value;
 
-      items.forEach(item => {
-        const inCategory = category === "all" || item.dataset.category === category;
-        const matchesSearch = item.textContent.toLowerCase().includes(term);
-        item.style.display = (inCategory && matchesSearch) ? "" : "none";
-      });
+<div class="section-divider"></div>
+<!------------------ Merch top sellers ------------------------->
+<div id="merch">
+    <div class="container">
+        <h1 class="sub-title">Top Sellers</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/topsellers/ovosweater.jpg">
+                <div class="layer">
+                    <h3>Sweater</h3>
+                    <p>Laurier & Octobers Very Own Collberation sweater</p>
+                    <p class="price">$99.99</p>
+                    <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <div class="product-btn-group">
+                        <button class="product-btn" data-id="top-Sweater1" data-name="Laurier x OVO sweater" data-price="99.99" data-image="images/topsellers/ovosweater.jpg">Add to Cart</button>
+                        <button class="product-btn add-to-wishlist">Add to Wishlist</button>
+                        <button class="product-btn leave-review" data-product="Laurier x OVO Sweater">Leave Review</button>
+                    </div>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/topsellers/varsityjacket.jpg">
+                <div class="layer">
+                    <h3>Varsity Jacket</h3>
+                    <p>Laurier & Octobers Very Own Collberation jacket</p>
+                    <p class="price">$179.99</p>
+                    <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <div class="product-btn-group"> 
+                        <button class="product-btn" data-id="top-Jacket1" data-name="Laurier x OVO Varsity Jacket" data-price="179.99" data-image="images/topsellers/varsityjacket.jpg">Add to Cart</button>
+                        <button class="product-btn add-to-wishlist">Add to Wishlist</button>
+                        <button class="product-btn leave-review" data-product="Laurier x OVO Varsity Jacket">Leave Review</button>
+                    </div>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/topsellers/poloovo.jpg">
+                <div class="layer">
+                    <h3>Varsity Polo</h3>
+                    <p>Laurier & Octobers Very Own Collberation Polo</p>
+                    <p class="price">$129.99</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <div class="product-btn-group"> 
+                        <button class="product-btn" data-id="top-Polo1" data-name="Laurier x OVO Varsity Polo" data-price="129.99" data-image="images/topsellers/poloovo.jpg">Add to Cart</button>
+                        <button class="product-btn add-to-wishlist">Add to Wishlist</button>
+                        <button class="product-btn leave-review" data-product="Laurier x OVO Varsity Jacket">Leave Review</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="merch.html" class="btn">See more</a>
+    </div>
+</div>
+
+<style>
+    a[href="signup.html"] {
+  display: none !important;
+}
+</style>
+
+<!------------------ Script Section ------------------------->
+
+<!-- small device menu side bar close and open -->
+<script>
+    var sidemenu = document.getElementById('sidemenu');
+    
+    function openmenu(){
+        sidemenu.style.right = "0";
     }
 
-    searchInput.addEventListener("keyup", filterItems);
-    filterSelect.addEventListener("change", filterItems);
-  </script>
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+
+</script>
+
+<!-- wishlist js -->
+<script src="wishlist.js"></script>
+
+<!--  Auth + Navbar  -->
+<script src="auth.js"></script>
+<script src="navbar.js"></script>
+<script src="cart.js"></script>
+<script src="reviews.js"></script>
 </body>
 </html>
+
