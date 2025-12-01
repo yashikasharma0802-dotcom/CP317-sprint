@@ -39,29 +39,11 @@
 
             <a href="search.html"><i class="fa-brands fa-searchengin"></i></a>
             <a href="checkout.html"><i class="fa fa-cart-shopping"></i></a>
-            <a href="login.html"><i class="fa-regular fa-user"></i></a>
-            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
             <a href="login.html" id="userIconLink"><i class="fa-regular fa-user"></i></a>
             <span id="auth-ui"></span>
+
             
         </nav>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const user = Auth && typeof Auth.currentUser === "function" ? Auth.currentUser() : null;
-    const authArea = document.getElementById("auth-buttons");
-
-    if (user) {
-      authArea.innerHTML = `<button id="logoutBtn" style="margin-left:10px;cursor:pointer;">Sign out</button>`;
-      document.getElementById("logoutBtn").addEventListener("click", () => {
-        Auth.logout();
-        window.location.reload();
-      });
-    } else {
-      authArea.innerHTML = `<a href="login.html" style="margin-left:10px;">Sign in / Register</a>`;
-    }
-  });
-</script> 
         
     </div>
 </div>
@@ -227,8 +209,15 @@ filtered.forEach(r => {
 });
 </script>
 
+<script src="auth.js"></script>
+<script src="navbar.js"></script>
+<script src="cart.js"></script>
+<script src="wishlist.js"></script>
+
+    
 </body>
 </html>
+
 
 
 
