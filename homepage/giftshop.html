@@ -5,143 +5,133 @@ Giftshop product section for Hawk Shop - Wilfrid Laurier Bookstore
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Materials - HawkShop</title>
-    <!-- fontawesome icon libary -->
-    <script src="https://kit.fontawesome.com/b551428bdf.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="product.css">
-    <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giftshop - HawkShop</title>
+
+<script src="https://kit.fontawesome.com/b551428bdf.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="product.css">
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <div id="review-modal" class="modal" style="display:none;">
-    <div class="modal-content">
-        <h2 id="review-product-title"></h2>
-
-        <label for="review-rating">Rating:</label>
-        <select id="review-rating">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-
-        <label for="review-text">Review:</label>
-        <textarea id="review-text" rows="4"></textarea>
-
-        <button id="submit-review">Submit Review</button>
-        <button id="close-review">Close</button>
-    </div>
+  <div class="modal-content">
+    <h2 id="review-product-title"></h2>
+    <label for="review-rating">Rating:</label>
+    <select id="review-rating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <label for="review-text">Review:</label>
+    <textarea id="review-text" rows="4"></textarea>
+    <button id="submit-review">Submit Review</button>
+    <button id="close-review">Close</button>
+  </div>
 </div>
 
-<!-- Nav bar -->
-
+<!-- NAV BAR -->
 <div id="header">
-    <div class="container">
-        <nav>
-            <img src="images/logos/hawkshop.png" alt="logo" class="logo">
+  <div class="container">
+    <nav>
+      <img src="images/logos/hawkshop.png" alt="logo" class="logo">
 
-            <ul id="sidemenu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="coursem.html">Course Materials</a></li>
-                <li><a href="merch.html">Apparel & Merch</a></li>
-                <li><a href="stationary.html">Stationary & Tech</a></li>
-                <li><a href="giftshop.html">Giftshop</a></li>
-                <li><a href="wishlist.html">Wishlist</a></li>
-                <li><a href="inventory.html">Inventory Report</a></li>
+      <ul id="sidemenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="coursem.html">Course Materials</a></li>
+        <li><a href="merch.html">Apparel & Merch</a></li>
+        <li><a href="stationary.html">Stationary & Tech</a></li>
+        <li><a href="giftshop.html">Giftshop</a></li>
+        <li><a href="wishlist.html">Wishlist</a></li>
+        <li><a href="inventory.html">Inventory Report</a></li>
+        <i class="fa-solid fa-rectangle-xmark" onclick="closemenu()"></i>
+      </ul>
 
-                <i class="fa-solid fa-rectangle-xmark" onclick="closemenu()"></i>
-            </ul>
+      <a href="search.html"><i class="fa-brands fa-searchengin"></i></a>
+      <a href="checkout.html"><i class="fa fa-cart-shopping"></i></a>
+      <a href="login.html" id="userIconLink" style="margin-left:auto;">
+        <i class="fa-regular fa-user"></i>
+      </a>
+      <span id="auth-ui" style="margin-left:10px;"></span>
 
-                <a href="search.html"><i class="fa-brands fa-searchengin"></i></a>
-            <a href="checkout.html" id="cart-link"><i class="fa fa-cart-shopping"></i></a>\
-            <a href="login.html" id="userIconLink"><i class="fa-regular fa-user"></i></a>
-            <span id="auth-ui"></span>
-            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-        </nav>
-    </div>
+      <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+    </nav>
+  </div>
 </div>
 
 <div class="section-divider"></div>
 
-<!------------------ Giftshop Product Section ------------------------->
+<!-- GIFT SHOP PRODUCT SECTION -->
 <div id="course">
-    <div class="container">
-        <h1 class="sub-title">Giftshop</h1>
-        <div class="work-list">
-            <div class="work">
-                <img src="images/giftshop/LaurierRing.jpg" alt="ring1">
-                <div class="layer">
-                    <h3>Laurier Steerling Silver Ring</h3>
-                    <p>Wilfrid Laurier Univeristy Merchandise</p>
-                    <p class="price">$49.99</p>
-                    <a href="ring.html"><i class="fa-solid fa-up-right-from-square"></i></a>
-                    <div class="product-btn-group">
-                        <button class=" product-btn" data-id="gift-ring-1" data-name="Laurier Steerling Silver Ring" data-price="49.99" data-image="images/giftshop/LaurierRing.jpg">Add to Cart</button>
-                        <button class="product-btn add-to-wishlist">Add to Wishlist</button>
-                        <button class="product-btn leave-review" data-product="Laurier Steerling Silver Ring">Leave Review</button>
-                    </div>
-                </div>
-            </div>
-            <div class="work">
-                <img src="images/giftshop/LaurierBear.jpg" alt="bear1">
-                <div class="layer">
-                    <h3>Laurier Shirt Bear</h3>
-                    <p>Wilfrid Laurier Univeristy Merchandise</p>
-                    <p class="price">$24.99</p>
-                    <a href="bear.html"><i class="fa-solid fa-up-right-from-square"></i></a>
-                    <div class="product-btn-group">
-                        <button class="product-btn add-to-cart" data-id="gift-bear-1" data-name="Laurier Shirt Bear" data-price="24.99" data-image="images/giftshop/LaurierBear.jpg">Add to Cart</button>
-                        <button class="product-btn add-to-wishlist">Add to Wishlist</button>
-                        <button class="product-btn leave-review" data-product="Laurier Shirt Bear">Leave Review</button>
-                    </div>
-                </div>
-            </div>
-            <div class="work">
-                <img src="images/giftshop/LaurierFlask.jpg" alt="flask1">
-                <div class="layer">
-                    <h3>Laurier Embossed Silver Flask</h3>
-                    <p>Wilfrid Laurier Univeristy Merchandise</p>
-                    <p class="price">$34.99</p>
-                    <a href="flask.html"><i class="fa-solid fa-up-right-from-square"></i></a>
-                    <div class="product-btn-group">
-                        <button class="product-btn add-to-cart" data-id="gift-flask-1" data-name="Laurier Embossed Silver Flask" data-price="34.99" data-image="images/giftshop/LaurierFlask.jpg">Add to Cart</button>
-                        <button class="product-btn add-to-wishlist">Add to Wishlist</button>
-                        <button class="product-btn leave-review" data-product="Laurier Embossed Silver Flask">Leave Review</button>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <h1 class="sub-title">Giftshop</h1>
+    <div class="work-list">
+
+      <div class="work">
+        <img src="images/giftshop/LaurierRing.jpg" alt="ring1">
+        <div class="layer">
+          <h3>Laurier Steerling Silver Ring</h3>
+          <p>Wilfrid Laurier Univeristy Merchandise</p>
+          <p class="price">$49.99</p>
+          <a href="ring.html"><i class="fa-solid fa-up-right-from-square"></i></a>
+          <div class="product-btn-group">
+            <button class="product-btn add-to-cart" data-id="gift-ring-1" data-name="Laurier Steerling Silver Ring" data-price="49.99" data-image="images/giftshop/LaurierRing.jpg">Add to Cart</button>
+            <button class="product-btn add-to-wishlist">Add to Wishlist</button>
+            <button class="product-btn leave-review" data-product="Laurier Steerling Silver Ring">Leave Review</button>
+          </div>
         </div>
+      </div>
+
+      <div class="work">
+        <img src="images/giftshop/LaurierBear.jpg" alt="bear1">
+        <div class="layer">
+          <h3>Laurier Shirt Bear</h3>
+          <p>Wilfrid Laurier Univeristy Merchandise</p>
+          <p class="price">$24.99</p>
+          <a href="bear.html"><i class="fa-solid fa-up-right-from-square"></i></a>
+          <div class="product-btn-group">
+            <button class="product-btn add-to-cart" data-id="gift-bear-1" data-name="Laurier Shirt Bear" data-price="24.99" data-image="images/giftshop/LaurierBear.jpg">Add to Cart</button>
+            <button class="product-btn add-to-wishlist">Add to Wishlist</button>
+            <button class="product-btn leave-review" data-product="Laurier Shirt Bear">Leave Review</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="work">
+        <img src="images/giftshop/LaurierFlask.jpg" alt="flask1">
+        <div class="layer">
+          <h3>Laurier Embossed Silver Flask</h3>
+          <p>Wilfrid Laurier Univeristy Merchandise</p>
+          <p class="price">$34.99</p>
+          <a href="flask.html"><i class="fa-solid fa-up-right-from-square"></i></a>
+          <div class="product-btn-group">
+            <button class="product-btn add-to-cart" data-id="gift-flask-1" data-name="Laurier Embossed Silver Flask" data-price="34.99" data-image="images/giftshop/LaurierFlask.jpg">Add to Cart</button>
+            <button class="product-btn add-to-wishlist">Add to Wishlist</button>
+            <button class="product-btn leave-review" data-product="Laurier Embossed Silver Flask">Leave Review</button>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </div>
+</div>
 
-
-<style>
-.fa-rectangle-xmark,
-.fa-bars {
-  display: none;
-}
-</style>
-
-<!-- Script -->
- <script>
-    var sidemenu = document.getElementById('sidemenu');
-    
-    function openmenu(){
-        sidemenu.style.right = "0";
-    }
-
-    function closemenu(){
-        sidemenu.style.right = "-200px";
-    }
-
+<script>
+  var sidemenu = document.getElementById('sidemenu');
+  function openmenu(){ sidemenu.style.right = "0"; }
+  function closemenu(){ sidemenu.style.right = "-200px"; }
 </script>
-<script src="wishlist.js"></script>
+
+<!-- ========= Scripts ========= -->
+<script src="auth.js"></script>
+<script src="navbar.js"></script>
 <script src="cart.js"></script>
+<script src="wishlist.js"></script>
 <script src="reviews.js"></script>
+
 </body>
 </html>
