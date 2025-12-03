@@ -8,7 +8,7 @@ Hawkshop redesign project for CP317 - Software Engineering @ Wilfrid Laurier Uni
 * Sprint 01 - Implementation and Initial Prototype:  [Check it out here!!](https://docs.google.com/document/d/18wHyvy0dE3gGCLrC-eCBtQY1MdR3Nutv8nHjOEChsrY/edit?usp=sharing)
 * Sprint 02 - Feature Enhancement and Integration: [Check it out here!!](https://docs.google.com/document/d/1yfTT186__aS7USeRqsJd9zHJvChIHXB8snddRajtrHw/edit?usp=sharing)
 * Sprint 03 - System Integration and Final Delivery Planning: [Check it out here!!](https://docs.google.com/document/d/1cTyEAfOen8oJJEWzHYoLEB_rXopLcJXW7OvHbO26FM0/edit?usp=sharing)
-* Final Project - 
+* Final Project - Complete System Delivery: [Check it out here!!](https://docs.google.com/document/d/1wFYFxVsOgGcmOq1YSsU2hHv3vTe9Z-T1USMz2kRaCkA/edit?usp=sharing)
 
 ## Technologies
 
@@ -22,7 +22,8 @@ Hawkshop redesign project for CP317 - Software Engineering @ Wilfrid Laurier Uni
 * Rabia Durrani
 * Ravishan Thanarajah
 * Ismail Elhadi
+* Daniel Kim
 
 
-## Sources
+## How to run code:
 
