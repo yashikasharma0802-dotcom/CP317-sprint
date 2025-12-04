@@ -16,14 +16,16 @@ Hawkshop redesign project for CP317 - Software Engineering @ Wilfrid Laurier Uni
 * **CSS** – Styles the user interface.
 * **JavaScript** – Adds interactivity.
 
-## Contributors 
-* Jayden Graneta
-* Yashika Sharma
-* Rabia Durrani
-* Ravishan Thanarajah
-* Ismail Elhadi
-* Daniel Kim
-
+## Project features:
+* Account Creation
+* Mobile Accessibility
+* Wishlists
+* Order History and Tracking
+* Inventory reporting
+* Reviews and Ratings
+* Promotion and Discounts
+* Cart
+* Responsive buttons and navigation bar
 
 ## Set up Instructions:
 Follow the instructions below to download, open, and run the project locally. This project was created using static HTML, CSS, and JavaScript, so npm, databases, and any external databases or systems are not required.
@@ -71,7 +73,14 @@ http://localhost:5500/
 ```
 * __Any changes that you make to the HTML, JavaScript or CSS will instantly show up in the reloaded browser!__
 
+### Troubleshooting
 
-
+## Contributors 
+* Jayden Graneta
+* Yashika Sharma
+* Rabia Durrani
+* Ravishan Thanarajah
+* Ismail Elhadi
+* Daniel Kim
 
 
