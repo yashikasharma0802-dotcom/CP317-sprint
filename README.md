@@ -32,7 +32,7 @@ Follow the instructions below to download, open, and run the project locally. Th
 * Visual Studio Code
 * Liver Sever Extension
 * Any modern web browser (Chrome, Safari, Brave, Firefox, etc.)
-* _No npm install_, _No backend or database needed_
+* *** No npm install, No backend or database needed ***
 
 #### Step 1: Clone the GitHub Repository
 Make sure that Git is installed on your device.
