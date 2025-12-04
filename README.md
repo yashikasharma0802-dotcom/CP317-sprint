@@ -44,6 +44,8 @@ cd HawkShop-Redesign
 Alternatively, the GitHub Repo can also be downloaded from the Zip file and extracted into your computer!
 
 #### Step 2: Opening project in VS Code
+* Launch **Visual Studio Code** Application
+* Click File 
 
 
 
