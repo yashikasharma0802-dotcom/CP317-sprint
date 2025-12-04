@@ -2,6 +2,9 @@
 
 Hawkshop redesign project for CP317 - Software Engineering @ Wilfrid Laurier University 
 
+## Project Description:
+We redesigned the Laurier Bookstore (HawkShop) into a cleaner, easier, and more modern shopping experience. Using an agile workflow, we moved through brainstorming, iterative improvements, sprint cycles, and clear documentation to deliver a polished front-end redesign.
+
 ## Assignment Milestones & Sprints
 * **Milestone 01** - Project Description and Objectives: [Check it out here!!](https://docs.google.com/document/d/1qX4QvWCyIq3dXtcVqlT8y6LQhfydbNJucyp3LQnKG3Y/edit?usp=sharing)
 * **Milestone 02** - Requirements & Backlog Expansion: [Check it out here!!](https://docs.google.com/document/d/1I_LmVETYzzndohl0Mc9gt9XwJVvtbBRorB-BesyE6FM/edit?usp=sharing)
@@ -73,7 +76,7 @@ http://localhost:5500/
 ```
 * __Any changes that you make to the HTML, JavaScript or CSS will instantly show up in the reloaded browser!__
 
-### Troubleshooting
+#### Troubleshooting
 * Live Server not working
   - Restart VS Code.
   - Reinstall Live Server Extension.
