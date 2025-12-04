@@ -42,6 +42,10 @@ const Auth = (() => {
     if (!currentUser()) window.location.href = redirectTo;
   }
 
-  return { userExists, createUser, login, logout, currentUser, requireAuth };
+   isLoggedIn() {
+     return !!JSON.parse(localStorage.getItem("currentUser"));
+   }
+
+  return { userExists, createUser, login, logout, currentUser, requireAuth, isLoggedIn };
 })();
 
