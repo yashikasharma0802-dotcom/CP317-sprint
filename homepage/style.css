@@ -508,3 +508,38 @@ nav .fa-solid{
     opacity: 1 !important;
 }
 
+.auth-button {
+    background-color: #1172f1;             
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;                     
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.25s ease,
+                transform 0.2s ease;
+    margin-left: 10px;
+}
+
+.auth-button:hover {
+    background-color: #0b5cc2;              
+    transform: translateY(-2px);
+}
+
+.auth-button:active {
+    transform: translateY(1px);
+}
+
+
+.auth-link {
+    color: #7a3cff;                           
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 6px;
+}
+
+.auth-link:hover {
+    color: #fbc212;                          
+    text-decoration: underline;
+}
+
