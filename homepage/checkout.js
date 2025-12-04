@@ -78,7 +78,9 @@
   function updateSummary() {
     const subtotal = calcSubtotal();
     const discountAmount = calcDiscountAmount(subtotal, appliedPromo);
-    const total = Math.max(0, subtotal - discountAmount);
+    const taxable = Math.max(0, subtotal - discountAmount);
+    const tax = taxable * 0.13;
+    const total = Math.max(0, taxable + tax);
 
     $('subtotal').textContent = formatMoney(subtotal);
     if (appliedPromo) {
@@ -89,6 +91,9 @@
       $('discount-row').style.display = 'none';
       $('applied-code').textContent = '';
       $('discount-amount').textContent = '-$0.00';
+    }
+    if ($('tax')) {
+      $('tax').textContent = formatMoney(tax);
     }
     $('total').textContent = formatMoney(total);
   }
