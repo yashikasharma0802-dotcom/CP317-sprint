@@ -11,22 +11,22 @@
 
     // 1) SHOW / HIDE PROTECTED NAV LINKS
     // These anchors should only be visible when logged in
-    const protectedAnchors = nav.querySelectorAll(
-      'a[href="wishlist.html"], ' +
-      'a[href="order-history.html"], ' +
-      'a[href="inventory.html"], ' +
-      'a[href="reviews.html"]'
-    );
+   const protectedSelectors = [
+    'a[href="wishlist.html"]',
+    'a[href="order-history.html"]',
+    'a[href="inventory.html"]',
+    'a[href="reviews.html"]',
+    'a[href="checkout.html"]'   // cart icon protected
+    ].join(", ");
+
+    const protectedAnchors = nav.querySelectorAll(protectedSelectors);
 
     protectedAnchors.forEach((a) => {
-      const wrapper = a.parentElement || a; // usually the <li>
-      if (!user) {
-        wrapper.style.display = "none";
-      } else {
-        wrapper.style.display = "";
-      }
+      const wrapper = a.parentElement || a;
+      if (!user) wrapper.style.display = "none";
+      else wrapper.style.display = "";
     });
-
+    
     // 2) USER ICON + SIGN IN / SIGN OUT TEXT
     const userIcon = nav.querySelector(".fa-regular.fa-user");
     const userIconLink = userIcon ? userIcon.closest("a") : null;
