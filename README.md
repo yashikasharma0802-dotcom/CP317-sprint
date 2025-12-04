@@ -26,6 +26,8 @@ Hawkshop redesign project for CP317 - Software Engineering @ Wilfrid Laurier Uni
 
 
 ## Set up Instructions:
+Follow the instructions below to download, open, and run the project locally. This project was created using static HTML, CSS, and JavaScript, so npm, databases, and any external databases or systems are not required.
+
 ### Step 1: Clone the GitHub Repository
 Make sure that Git is installed on your device.
 
@@ -33,5 +35,8 @@ Make sure that Git is installed on your device.
 git clone https://github.com/jayden-graneta/HawkShop-Redesign.git
 cd HawkShop-Redesign
 ```
+Alternatively, the GitHub Repo can also be downloaded from the Zip file and extracted into your computer!
+
+#### Step 2: Opening project in VS Code
 
 
