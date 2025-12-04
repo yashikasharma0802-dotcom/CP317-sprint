@@ -61,7 +61,7 @@ This project uses an extension called Live Server, which allows developers to se
 #### Step 4: Run the Project:
 * In **VS Code's** File Explorer, find **index.html**.
 * Right-click on the file.
-* Select ** Open with Live Server**.
+* Select **Open with Live Server**.
 * Your Browser will then open at a URL like:
 ```bash
 http://127.0.0.1:5500/
@@ -74,6 +74,16 @@ http://localhost:5500/
 * __Any changes that you make to the HTML, JavaScript or CSS will instantly show up in the reloaded browser!__
 
 ### Troubleshooting
+* Live Server not working
+  - Restart VS Code.
+  - Reinstall Live Server Extension.
+  - Try launching from a different HTML file.
+* Page not loading
+  - Confirm that you started the site with Live Server, not just opening the file directly.
+  - Make sure that VS Code stays open.
+  - Check that the file paths inside HTML are correctly downloaded
+* CSS or JS not loading:
+  - Try refreshing the browser using Ctrl + Shift + R
 
 ## Contributors 
 * Jayden Graneta
