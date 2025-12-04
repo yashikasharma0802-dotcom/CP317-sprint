@@ -25,5 +25,7 @@ Hawkshop redesign project for CP317 - Software Engineering @ Wilfrid Laurier Uni
 * Daniel Kim
 
 
-## How to run code:
+## Set up Instructions:
+### Step 1: Clone the GitHub Repository
+Make sure that Git is installed on your device.
 
