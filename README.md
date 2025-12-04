@@ -29,3 +29,9 @@ Hawkshop redesign project for CP317 - Software Engineering @ Wilfrid Laurier Uni
 ### Step 1: Clone the GitHub Repository
 Make sure that Git is installed on your device.
 
+```bash
+git clone https://github.com/jayden-graneta/HawkShop-Redesign.git
+cd HawkShop-Redesign
+```
+
+
