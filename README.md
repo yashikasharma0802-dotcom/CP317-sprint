@@ -56,6 +56,22 @@ This project uses an extension called Live Server, which allows developers to se
 * Download Live Server by Ritwick Dey.
 * Reload VS Code to apply the new extension.
 
+#### Step 4: Run the Project:
+* In **VS Code's** File Explorer, find **index.html**.
+* Right-click on the file.
+* Select ** Open with Live Server**.
+* Your Browser will then open at a URL like:
+```
+http://127.0.0.1:5500/
+
+or
+
+http://localhost:5500/
+
+```
+* __Any changes that you make to the HTML, JavaScript or CSS will instantly show up in the reloaded browser!__
+
+
 
 
 
