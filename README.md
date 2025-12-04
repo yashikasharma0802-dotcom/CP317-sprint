@@ -44,8 +44,17 @@ cd HawkShop-Redesign
 Alternatively, the GitHub Repo can also be downloaded from the Zip file and extracted into your computer!
 
 #### Step 2: Opening project in VS Code
-* Launch **Visual Studio Code** Application
-* Click File 
+* Launch **Visual Studio Code** Application.
+* Click **File -> Open Folder.**
+* Select the project's root directory (HawkShop-Redesign/homepage/)
+* Wait for the workspace to load.
+
+#### Step 3: Install Live Server
+This project uses an extension called Live Server, which allows developers to see Live changes to Code on their preferred browser.
+* Open the Extension panel in VS Code.
+* Search for Live Server.
+* Download Live Server by Ritwick Dey.
+* Reload VS Code to apply the new extension.
 
 
 
