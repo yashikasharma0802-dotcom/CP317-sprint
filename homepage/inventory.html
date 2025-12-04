@@ -8,7 +8,7 @@
     <script src="auth.js"></script>
 </head>
 <body>
-
+<script> if (!Auth.currentUser()) window.location.href = "login.html"; </script>
 <div class="container">
     <h1>Inventory Report</h1>
     <p class="subtitle">Store Manager Dashboard — Stock Monitoring</p>
@@ -29,7 +29,7 @@
 </div>
 
 <script src="inventory.js"></script>
-<script>Auth.populateUI();</script>
+
 
 </body>
 </html>
