@@ -61,7 +61,7 @@ This project uses an extension called Live Server, which allows developers to se
 * Right-click on the file.
 * Select ** Open with Live Server**.
 * Your Browser will then open at a URL like:
-```
+```bash
 http://127.0.0.1:5500/
 
 or
