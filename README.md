@@ -35,7 +35,7 @@ Follow the instructions below to download, open, and run the project locally. Th
 
 #### System Requirements to run:
 * Visual Studio Code
-* Liver Sever Extension
+* Live Sever Extension
 * Any modern web browser (Chrome, Safari, Brave, Firefox, etc.)
 * _No npm install backend or database needed_
 
