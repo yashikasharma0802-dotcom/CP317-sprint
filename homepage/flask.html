@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laurier Pullover Hoodie - HawkShop</title>
+    <title>Laurier Flask - HawkShop</title>
 
-    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="style.css">
-
     <script src="https://kit.fontawesome.com/b551428bdf.js" crossorigin="anonymous"></script>
 
     <style>
-        /* Fix Header Height */
         #header {
             width: 100%;
             padding: 15px 0;
@@ -22,14 +19,13 @@
     </style>
 </head>
 
-<body>
+<body class="reviews-page">
 
 <!-- NAV BAR -->
 <div id="header">
     <div class="container">
         <nav>
             <img src="images/logos/hawkshop.png" class="logo">
-
             <ul id="sidemenu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="coursem.html">Course Materials</a></li>
@@ -43,10 +39,10 @@
 
             <a href="search.html"><i class="fa-brands fa-searchengin"></i></a>
             <a href="checkout.html"><i class="fa fa-cart-shopping"></i></a>
-            <a href="login.html" id="userIconLink" style="margin-left:auto;"><i class="fa-regular fa-user"></i></a>
-            <span id="auth-ui" style="margin-left:10px;font-size:0.95rem;color:#fff;"></span>
+            <a href="login.html" id="userIconLink"><i class="fa-regular fa-user"></i></a>
+            <span id="auth-ui"></span>
 
-            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            
         </nav>
     </div>
 </div>
@@ -58,32 +54,37 @@
     <div style="display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start;">
         
         <div style="flex:1;min-width:280px;">
-            <img src="images/merch/hoodie.jpg" style="width:100%;border-radius:12px;">
+            <img src="images/giftshop/LaurierFlask.jpg" style="width:100%;border-radius:12px;">
         </div>
 
         <div style="flex:1;min-width:280px;">
-            <h1 class="sub-title">Laurier Pullover Hoodie</h1>
-
-            <p style="font-size:22px;color:#dcd6ff;margin-top:10px;">$64.50</p>
-
+            <h1 class="sub-title">Laurier Flask</h1>
+            <p style="font-size:22px;color:#dcd6ff;margin-top:10px;">$29.99</p>
             <p style="margin-top:15px;line-height:1.6;">
-                Premium Laurier fleece hoodie with embroidered university logo.
+                Official Laurier Flask for your drinks, perfect for students, alumni, and fans.
             </p>
 
             <br>
 
             <button class="cameron-btn add-to-cart"
-                data-id="merch-hoodie-1"
-                data-name="Laurier Pullover Hoodie"
-                data-price="64.50"
-                data-image="images/merch/hoodie.jpg">
+                data-id="gift-flask-1"
+                data-name="Laurier Flask"
+                data-price="29.99"
+                data-image="images/giftshop/LaurierFlask.jpg">
                 Add to Cart
             </button>
 
-            <button class="cameron-btn add-to-wishlist" style="margin-left:10px;">Add to Wishlist</button>
+            <button class="cameron-btn add-to-wishlist"
+                data-id="gift-flask-1"
+                data-name="Laurier Flask"
+                data-price="29.99"
+                data-image="images/giftshop/LaurierFlask.jpg"
+                style="margin-left:10px;">
+                Add to Wishlist
+            </button>
 
             <button class="cameron-btn leave-review"
-                data-product="Laurier Pullover Hoodie"
+                data-product="Laurier Flask"
                 style="margin-left:10px;background:#421885;">
                 Leave Review
             </button>
@@ -98,7 +99,7 @@
 <!-- REVIEW MODAL -->
 <div id="review-modal" class="modal" style="display:none;">
     <div class="modal-content">
-        <h2 id="review-product-title">Laurier Pullover Hoodie</h2>
+        <h2 id="review-product-title">Laurier Flask</h2>
 
         <label for="review-rating">Rating:</label>
         <select id="review-rating">
@@ -127,7 +128,7 @@
 <script>
     const reviewList = document.getElementById("product-reviews");
     const allReviews = JSON.parse(localStorage.getItem("reviews")) || [];
-    const filtered = allReviews.filter(r => r.product === "Laurier Pullover Hoodie");
+    const filtered = allReviews.filter(r => r.product === "Laurier Flask");
 
     filtered.forEach(r => {
         let card = document.createElement("div");
