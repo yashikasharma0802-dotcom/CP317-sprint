@@ -333,6 +333,7 @@ nav a i {
     transition: background-color 0.25s ease, transform 0.2s ease;
 }
 
+.leave-review:hover,
 .add-to-cart:hover,
 .add-to-cart-from-wishlist:hover,
 .add-to-wishlist:hover {
