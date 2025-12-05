@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introduction to Psychology - HawkShop</title>
+    <title>Calculus & Vectors - HawkShop</title>
 
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/b551428bdf.js" crossorigin="anonymous"></script>
@@ -57,44 +57,44 @@
     <div style="display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start;">
         
         <div style="flex:1;min-width:280px;">
-            <img src="images/coursem/intro-to-psych.jpg" style="width:100%;border-radius:12px;">
+            <img src="images/coursem/Nelson-Calculus-and-Vectors.jpg" style="width:100%;border-radius:12px;">
         </div>
 
         <div style="flex:1;min-width:280px;">
-            <h1 class="sub-title">Introduction to Psychology Textbook</h1>
-            <p style="font-size:22px;color:#dcd6ff;margin-top:10px;">$99.99</p>
+            <h1 class="sub-title">Calculus & Vectors Textbook</h1>
+            <p style="font-size:22px;color:#dcd6ff;margin-top:10px;">$89.99</p>
             <p style="margin-top:15px;line-height:1.6;">
-                Author: John Doe | ISBN: 1234567890
+                Author: Jane Smith | ISBN: 0987654321
             </p>
 
             <br>
 
             <button class="cameron-btn add-to-cart"
-                data-id="psych-textbook"
-                data-name="Introduction to Psychology Textbook"
-                data-price="99.99"
-                data-image="images/coursem/intro-to-psych.jpg">
+                data-id="calc-textbook1"
+                data-name="Calculus & Vectors Textbook"
+                data-price="89.99"
+                data-image="images/coursem/Nelson-Calculus-and-Vectors.jpg">
                 Add to Cart
             </button>
 
             <button class="cameron-btn add-to-wishlist"
-                data-id="psych-textbook"
-                data-name="Introduction to Psychology Textbook"
-                data-price="99.99"
-                data-image="images/coursem/intro-to-psych.jpg"
+                data-id="calc-textbook1"
+                data-name="Calculus & Vectors Textbook"
+                data-price="89.99"
+                data-image="images/coursem/Nelson-Calculus-and-Vectors.jpg"
                 style="margin-left:10px;">
                 Add to Wishlist
             </button>
 
             <button class="cameron-btn leave-review"
-                data-product="Introduction to Psychology Textbook"
+                data-product="Calculus & Vectors Textbook"
                 style="margin-left:10px;">
                 Leave Review
             </button>
         </div>
     </div>
 
-    <!-- REVIEWS -->
+      <!-- REVIEWS -->
     <h2 style="margin-top:60px;margin-bottom:20px;">Customer Reviews</h2>
     <div id="product-reviews" class="work-list"></div>
 </div>
@@ -193,7 +193,7 @@ submitBtn.addEventListener("click", () => {
 
 // ===== Display existing reviews =====
 const allReviews = JSON.parse(localStorage.getItem("reviews")) || [];
-const filtered = allReviews.filter(r => r.product === "Introduction to Psychology Textbook");
+const filtered = allReviews.filter(r => r.product === "Calculus & Vectors Textbook");
 filtered.forEach(r => {
     const card = document.createElement("div");
     card.className = "work";
@@ -218,4 +218,3 @@ filtered.forEach(r => {
     
 </body>
 </html>
-
