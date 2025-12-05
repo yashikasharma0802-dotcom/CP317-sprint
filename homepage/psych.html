@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laurier Plush Bear - HawkShop</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/b551428bdf.js" crossorigin="anonymous"></script>
+
+    <style>
+        #header {
+            width: 100%;
+            padding: 15px 0;
+            background-position: center;
+            background-size: cover;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body class="reviews-page">
+
+<!-- NAV BAR -->
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/logos/hawkshop.png" class="logo">
+            <ul id="sidemenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="coursem.html">Course Materials</a></li>
+        <li><a href="merch.html">Apparel & Merch</a></li>
+        <li><a href="stationary.html">Stationary & Tech</a></li>
+        <li><a href="giftshop.html">Giftshop</a></li>
+        <li><a href="wishlist.html">Wishlist</a></li>
+        <li><a href="order-history.html">Orders</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="inventory.html">Inventory</a></li>
+                <i class="fa-solid fa-rectangle-xmark" onclick="closemenu()"></i>
+            </ul>
+
+            <a href="search.html"><i class="fa-brands fa-searchengin"></i></a>
+            <a href="checkout.html"><i class="fa fa-cart-shopping"></i></a>
+            <a href="login.html" id="userIconLink"><i class="fa-regular fa-user"></i></a>
+            <span id="auth-ui"></span>
+
+            
+        </nav>
+        
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- PRODUCT SECTION -->
+<div class="container" style="margin-top:40px;">
+    <div style="display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start;">
+        
+        <div style="flex:1;min-width:280px;">
+            <img src="images/coursem/intro-to-psych.jpg" style="width:100%;border-radius:12px;">
+        </div>
+
+        <div style="flex:1;min-width:280px;">
+            <h1 class="sub-title">Introduction to Psychology Textbook</h1>
+            <p style="font-size:22px;color:#dcd6ff;margin-top:10px;">$99.99</p>
+            <p style="margin-top:15px;line-height:1.6;">
+                Author: John Doe | ISBN: 1234567890
+            </p>
+
+            <br>
+
+            <button class="cameron-btn add-to-cart"
+                data-id="psych-textbook"
+                data-name="Introduction to Psychology Textbook"
+                data-price="99.99"
+                data-image="images/coursem/intro-to-psych.jpg">
+                Add to Cart
+            </button>
+
+            <button class="cameron-btn add-to-wishlist"
+                data-id="psych-textbook"
+                data-name="Introduction to Psychology Textbook"
+                data-price="99.99"
+                data-image="images/coursem/intro-to-psych.jpg"
+                style="margin-left:10px;">
+                Add to Wishlist
+            </button>
+
+            <button class="cameron-btn leave-review"
+                data-product="Introduction to Psychology Textbook"
+                style="margin-left:10px;">
+                Leave Review
+            </button>
+        </div>
+    </div>
+
+    <!-- REVIEWS -->
+    <h2 style="margin-top:60px;margin-bottom:20px;">Customer Reviews</h2>
+    <div id="product-reviews" class="work-list"></div>
+</div>
+
+<!-- REVIEW MODAL -->
+<div id="review-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <h2 id="review-product-title">Laurier Plush Bear</h2>
+
+        <label for="review-rating">Rating:</label>
+        <select id="review-rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label for="review-text">Review:</label>
+        <textarea id="review-text" rows="4"></textarea>
+
+        <button id="submit-review">Submit Review</button>
+        <button id="close-review">Close</button>
+    </div>
+</div>
+
+<!-- SCRIPTS -->
+<script src="auth.js"></script>
+<script src="navbar.js"></script>
+<script src="cart.js"></script>
+<script src="wishlist.js"></script>
+
+<script>
+// ===== Reviews Modal Functionality =====
+const leaveButtons = document.querySelectorAll(".leave-review");
+const modal = document.getElementById("review-modal");
+const productTitle = document.getElementById("review-product-title");
+const submitBtn = document.getElementById("submit-review");
+const closeBtn = document.getElementById("close-review");
+const reviewText = document.getElementById("review-text");
+const reviewRating = document.getElementById("review-rating");
+const reviewList = document.getElementById("product-reviews");
+
+// Open modal
+leaveButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const product = btn.getAttribute("data-product");
+        productTitle.textContent = product;
+        modal.style.display = "block";
+    });
+});
+
+// Close modal
+closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+// Submit review
+submitBtn.addEventListener("click", () => {
+    const product = productTitle.textContent;
+    const rating = parseInt(reviewRating.value);
+    const text = reviewText.value.trim();
+
+    if (isNaN(rating) || rating < 1 || rating > 5) {
+        alert("Invalid rating");
+        return;
+    }
+
+    const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+    const newReview = {
+        product: product,
+        rating: rating,
+        text: text,
+        date: new Date().toLocaleString()
+    };
+    reviews.push(newReview);
+    localStorage.setItem("reviews", JSON.stringify(reviews));
+
+    // Add new review card immediately
+    const card = document.createElement("div");
+    card.className = "work";
+    card.innerHTML = `
+        <div class="layer">
+            <h3>${newReview.product}</h3>
+            <p>${"⭐".repeat(newReview.rating)}${"☆".repeat(5 - newReview.rating)}</p>
+            <p>${newReview.text || "(no review)"}</p>
+            <small>${newReview.date}</small>
+        </div>
+    `;
+    reviewList.appendChild(card);
+
+    // Reset and close modal
+    reviewText.value = "";
+    modal.style.display = "none";
+});
+
+// ===== Display existing reviews =====
+const allReviews = JSON.parse(localStorage.getItem("reviews")) || [];
+const filtered = allReviews.filter(r => r.product === "Introduction to Psychology Textbook");
+filtered.forEach(r => {
+    const card = document.createElement("div");
+    card.className = "work";
+    card.innerHTML = `
+        <div class="layer">
+            <h3>${r.product}</h3>
+            <p>${"⭐".repeat(r.rating)}${"☆".repeat(5 - r.rating)}</p>
+            <p>${r.text || "(no review)"}</p>
+            <small>${r.date}</small>
+        </div>
+    `;
+    reviewList.appendChild(card);
+});
+</script>
+
+<script src="js/auth.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/wishlist.js"></script>
+<script src="js/reviews.js"></script>
+
+    
+</body>
+</html>
+
