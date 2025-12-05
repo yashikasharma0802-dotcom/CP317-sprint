@@ -1,6 +1,3 @@
-<!-- 
- Homepage for Hawk Shop - Wilfrid Laurier Bookstore
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,184 +5,187 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hawk Shop - Wilfrid Laurier Bookstore</title>
     <link rel="stylesheet" href="style.css">
-    <!-- fontawesome icon libary -->
     <script src="https://kit.fontawesome.com/b551428bdf.js" crossorigin="anonymous"></script>
-    <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
-<!------------------ Home page / Header section ------------------------->
-<div id="header">
-    <div class="container">
-        <nav>
-            <img src="images/logos/hawkshop.png" alt="logo" class="logo">
-
-            <ul id="sidemenu">
-                <li><a href="#header">Home</a></li>
-                <li><a href="coursem.html">Course Materials</a></li>
-                <li><a href="merch.html">Apparel & Merch</a></li>
-                <li><a href="stationary.html">Stationary & Tech</a></li>
-                <li><a href="giftshop.html">Giftshop</a></li>
-                <li><a href="wishlist.html">Wishlist</a></li>
-                <li><a href="order-history.html">Orders</a></li>
-                <li><a href="reviews.html">Reviews</a></li>
-                <li><a href="inventory.html">Inventory</a></li>
-                <i class="fa-solid fa-rectangle-xmark" onclick="closemenu()"></i>
-            </ul>
-
-            <a href="search.html"><i class="fa-brands fa-searchengin"></i></a>
-            <a href="checkout.html" id="cart-link"><i class="fa fa-cart-shopping"></i></a>
-            <a href="login.html" id="userIconLink" style="margin-left:auto;">
-            <i class="fa-regular fa-user"></i>
-            </a>
-      
-            <div id="auth-ui"></div>
-            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-        </nav>
-        <div>
-            <div class="header-main">
-                <div class="header-text">
-                  <h1>Welcome to the <br><span>Hawkshop</span>!!</h1>
-        </div>
-    </div>
-</div>
-
-
-<div class="section-divider"></div>
-<!-- Merch top sellers -->
-<div id="merch">
-    <div class="container">
-        <h1 class="sub-title">Top Sellers</h1>
-        <div class="work-list">
-            <!-- Sweater -->
-            <div class="work">
-                <img src="images/topsellers/ovosweater.jpg" alt="Laurier OVO Sweater">
-                <div class="layer">
-                    <h3>Sweater</h3>
-                    <p>Laurier & Octobers Very Own Collberation sweater</p>
-                    <p class="price">$99.99</p>
-                    <a href="sweater.html"><i class="fa-solid fa-up-right-from-square"></i></a> 
-                    <div class="product-btn-group">
-                        <button class="cameron-btn add-to-cart"
-                            data-id="top-Sweater1"
-                            data-name="Laurier x OVO sweater"
-                            data-price="99.99"
-                            data-image="images/topsellers/ovosweater.jpg">
-                            Add to Cart
-                        </button>
-                        <button class="cameron-btn add-to-wishlist"
-                            data-id="top-Sweater1"
-                            data-name="Laurier x OVO sweater"
-                            data-price="99.99"
-                            data-image="images/topsellers/ovosweater.jpg">
-                            Add to Wishlist
-                        </button>
-                        <button class="cameron-btn leave-review"
-                            data-product="Laurier x OVO Sweater">
-                            Leave Review
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Varsity Jacket -->
-            <div class="work">
-                <img src="images/topsellers/varsityjacket.jpg" alt="Laurier Varsity Jacket">
-                <div class="layer">
-                    <h3>Varsity Jacket</h3>
-                    <p>Laurier & Octobers Very Own Collberation jacket</p>
-                    <p class="price">$179.99</p>
-                    <a href="varsity.html"><i class="fa-solid fa-up-right-from-square"></i></a>
-                    <div class="product-btn-group"> 
-                        <button class="cameron-btn add-to-cart"
-                            data-id="top-Jacket1"
-                            data-name="Laurier x OVO Varsity Jacket"
-                            data-price="179.99"
-                            data-image="images/topsellers/varsityjacket.jpg">
-                            Add to Cart
-                        </button>
-                        <button class="cameron-btn add-to-wishlist"
-                            data-id="top-Jacket1"
-                            data-name="Laurier x OVO Varsity Jacket"
-                            data-price="179.99"
-                            data-image="images/topsellers/varsityjacket.jpg">
-                            Add to Wishlist
-                        </button>
-                        <button class="cameron-btn leave-review"
-                            data-product="Laurier x OVO Varsity Jacket">
-                            Leave Review
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Varsity Polo -->
-            <div class="work">
-                <img src="images/topsellers/poloovo.jpg" alt="Laurier Varsity Polo">
-                <div class="layer">
-                    <h3>Varsity Polo</h3>
-                    <p>Laurier & Octobers Very Own Collberation Polo</p>
-                    <p class="price">$129.99</p>
-                    <a href="polo.html"><i class="fa-solid fa-up-right-from-square"></i></a> 
-                    <div class="product-btn-group"> 
-                        <button class="cameron-btn add-to-cart"
-                            data-id="top-Polo1"
-                            data-name="Laurier x OVO Varsity Polo"
-                            data-price="129.99"
-                            data-image="images/topsellers/poloovo.jpg">
-                            Add to Cart
-                        </button>
-                        <button class="cameron-btn add-to-wishlist"
-                            data-id="top-Polo1"
-                            data-name="Laurier x OVO Varsity Polo"
-                            data-price="129.99"
-                            data-image="images/topsellers/poloovo.jpg">
-                            Add to Wishlist
-                        </button>
-                        <button class="cameron-btn leave-review"
-                            data-product="Laurier x OVO Varsity Polo">
-                            Leave Review
-                        </button>
+    <!-- Home page / Header section -->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logos/hawkshop.png" alt="logo" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="coursem.html">Course Materials</a></li>
+                    <li><a href="merch.html">Apparel & Merch</a></li>
+                    <li><a href="stationary.html">Stationary & Tech</a></li>
+                    <li><a href="giftshop.html">Giftshop</a></li>
+                    <li><a href="wishlist.html">Wishlist</a></li>
+                    <li><a href="order-history.html">Orders</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="inventory.html">Inventory</a></li>
+                    <i class="fa-solid fa-rectangle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <a href="search.html"><i class="fa-brands fa-searchengin"></i></a>
+                <a href="checkout.html" id="cart-link"><i class="fa fa-cart-shopping"></i></a>
+                <a href="login.html" id="userIconLink" style="margin-left:auto;">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+                <div id="auth-ui"></div>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div>
+                <div class="header-main">
+                    <div class="header-text">
+                        <!-- Welcome message that will dynamically change -->
+                        <h1 id="welcomeMessage">Welcome to the <br><span>HawkShop</span>!</h1>
                     </div>
                 </div>
             </div>
         </div>
-        <a href="merch.html" class="btn">See more</a> <!-- See More button points to merch.html -->
     </div>
-</div>
 
-     
-<style>
-    a[href="signup.html"] {
-  display: none !important;
-}
-</style>
+    <div class="section-divider"></div>
+    <!-- Merch top sellers -->
+    <div id="merch">
+        <div class="container">
+            <h1 class="sub-title">Top Sellers</h1>
+            <div class="work-list">
+                <!-- Sweater -->
+                <div class="work">
+                    <img src="images/topsellers/ovosweater.jpg" alt="Laurier OVO Sweater">
+                    <div class="layer">
+                        <h3>Sweater</h3>
+                        <p>Laurier & Octobers Very Own Collberation sweater</p>
+                        <p class="price">$99.99</p>
+                        <a href="sweater.html"><i class="fa-solid fa-up-right-from-square"></i></a> 
+                        <div class="product-btn-group">
+                            <button class="cameron-btn add-to-cart"
+                                data-id="top-Sweater1"
+                                data-name="Laurier x OVO sweater"
+                                data-price="99.99"
+                                data-image="images/topsellers/ovosweater.jpg">
+                                Add to Cart
+                            </button>
+                            <button class="cameron-btn add-to-wishlist"
+                                data-id="top-Sweater1"
+                                data-name="Laurier x OVO sweater"
+                                data-price="99.99"
+                                data-image="images/topsellers/ovosweater.jpg">
+                                Add to Wishlist
+                            </button>
+                            <button class="cameron-btn leave-review"
+                                data-product="Laurier x OVO Sweater">
+                                Leave Review
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-<!------------------ Script Section ------------------------->
+                <!-- Varsity Jacket -->
+                <div class="work">
+                    <img src="images/topsellers/varsityjacket.jpg" alt="Laurier Varsity Jacket">
+                    <div class="layer">
+                        <h3>Varsity Jacket</h3>
+                        <p>Laurier & Octobers Very Own Collberation jacket</p>
+                        <p class="price">$179.99</p>
+                        <a href="varsity.html"><i class="fa-solid fa-up-right-from-square"></i></a>
+                        <div class="product-btn-group"> 
+                            <button class="cameron-btn add-to-cart"
+                                data-id="top-Jacket1"
+                                data-name="Laurier x OVO Varsity Jacket"
+                                data-price="179.99"
+                                data-image="images/topsellers/varsityjacket.jpg">
+                                Add to Cart
+                            </button>
+                            <button class="cameron-btn add-to-wishlist"
+                                data-id="top-Jacket1"
+                                data-name="Laurier x OVO Varsity Jacket"
+                                data-price="179.99"
+                                data-image="images/topsellers/varsityjacket.jpg">
+                                Add to Wishlist
+                            </button>
+                            <button class="cameron-btn leave-review"
+                                data-product="Laurier x OVO Varsity Jacket">
+                                Leave Review
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-<!-- small device menu side bar close and open -->
-<script>
-    var sidemenu = document.getElementById('sidemenu');
-    
-    function openmenu(){
-        sidemenu.style.right = "0";
-    }
+                <!-- Varsity Polo -->
+                <div class="work">
+                    <img src="images/topsellers/poloovo.jpg" alt="Laurier Varsity Polo">
+                    <div class="layer">
+                        <h3>Varsity Polo</h3>
+                        <p>Laurier & Octobers Very Own Collberation Polo</p>
+                        <p class="price">$129.99</p>
+                        <a href="polo.html"><i class="fa-solid fa-up-right-from-square"></i></a> 
+                        <div class="product-btn-group"> 
+                            <button class="cameron-btn add-to-cart"
+                                data-id="top-Polo1"
+                                data-name="Laurier x OVO Varsity Polo"
+                                data-price="129.99"
+                                data-image="images/topsellers/poloovo.jpg">
+                                Add to Cart
+                            </button>
+                            <button class="cameron-btn add-to-wishlist"
+                                data-id="top-Polo1"
+                                data-name="Laurier x OVO Varsity Polo"
+                                data-price="129.99"
+                                data-image="images/topsellers/poloovo.jpg">
+                                Add to Wishlist
+                            </button>
+                            <button class="cameron-btn leave-review"
+                                data-product="Laurier x OVO Varsity Polo">
+                                Leave Review
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="merch.html" class="btn">See more</a> <!-- See More button points to merch.html -->
+        </div>
+    </div>
 
-    function closemenu(){
-        sidemenu.style.right = "-200px";
-    }
+    <style>
+        a[href="signup.html"] {
+            display: none !important;
+        }
+    </style>
 
-</script>
+    <script>
+        // On page load, check if user is logged in and update welcome message
+        document.addEventListener("DOMContentLoaded", function() {
+            const user = Auth.currentUser();
+            const welcomeMessage = document.getElementById("welcomeMessage");
 
+            if (user) {
+                welcomeMessage.innerHTML = `Welcome back, <span style="color:#fbc212;">${user.name}</span>!!`;
+            } else {
+                welcomeMessage.innerHTML = `Welcome to the <span>HawkShop</span>!!`;
+            }
+        });
+    </script>
 
-<!--  Auth + Navbar  -->
-<script src="auth.js"></script>
-<script src="navbar.js"></script>
-<script src="wishlist.js"></script>
-<script src="cart.js"></script>
-<script src="reviews.js"></script>
-     
+    <!-- small device menu side bar close and open -->
+    <script>
+        var sidemenu = document.getElementById('sidemenu');
+        
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+
+    <!-- Auth + Navbar -->
+    <script src="auth.js"></script>
+    <script src="navbar.js"></script>
+    <script src="wishlist.js"></script>
+    <script src="cart.js"></script>
+    <script src="reviews.js"></script>
 </body>
 </html>

@@ -129,8 +129,8 @@ nav a i {
 
 .header-main {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start; 
+    justify-content: center; /* Center horizontally */
+    align-items: center; 
     margin-top: 10%;
     width: 100%;
     gap: 40px;
@@ -138,6 +138,7 @@ nav a i {
   }
   
   .header-text {
+    text-align: center; 
     font-size: 30px;
   }
   
