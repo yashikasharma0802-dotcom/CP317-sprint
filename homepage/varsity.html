@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Varsity Jacket - HawkShop</title>
+    <title>Laurier Varsity Jacket - HawkShop</title>
 
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/b551428bdf.js" crossorigin="anonymous"></script>
@@ -57,35 +57,35 @@
         </div>
 
         <div style="flex:1;min-width:280px;">
-            <h1 class="sub-title">Varsity Jacket</h1>
+            <h1 class="sub-title">Laurier Varsity Jacket</h1>
 
-            <p style="font-size:22px;color:#dcd6ff;margin-top:10px;">$199.99</p>
+            <p style="font-size:22px;color:#dcd6ff;margin-top:10px;">$79.99</p>
 
             <p style="margin-top:15px;line-height:1.6;">
-                Premium quality varsity jacket with the Laurier logo. A perfect blend of comfort and style for casual and semi-casual occasions.
+                Show your Laurier pride with this classic varsity jacket. Perfect for any occasion, whether on campus or off.
             </p>
 
             <br>
 
             <button class="cameron-btn add-to-cart"
-                data-id="topsellers-varsityjacket-1"
-                data-name="Varsity Jacket"
-                data-price="199.99"
-                data-image="images/topsellers/varsityjacket.jpg">
+                data-id="merch-LaurierVarsityJacket-1"
+                data-name="Laurier Varsity Jacket"
+                data-price="79.99"
+                data-image="images/merch/varsityjacket.jpg">
                 Add to Cart
             </button>
 
             <button class="cameron-btn add-to-wishlist"
-                data-id="topsellers-varsityjacket-1"
-                data-name="Varsity Jacket"
-                data-price="199.99"
-                data-image="images/topsellers/varsityjacket.jpg"
+                data-id="merch-LaurierVarsityJacket-1"
+                data-name="Laurier Varsity Jacket"
+                data-price="79.99"
+                data-image="images/merch/varsityjacket.jpg"
                 style="margin-left:10px;">
                 Add to Wishlist
             </button>
 
             <button class="cameron-btn leave-review"
-                data-product="Varsity Jacket"
+                data-product="Laurier Varsity Jacket"
                 style="margin-left:10px;">
                 Leave Review
             </button>
@@ -100,7 +100,7 @@
 <!-- REVIEW MODAL -->
 <div id="review-modal" class="modal" style="display:none;">
     <div class="modal-content">
-        <h2 id="review-product-title">Varsity Jacket</h2>
+        <h2 id="review-product-title">Laurier Varsity Jacket</h2>
 
         <label for="review-rating">Rating:</label>
         <select id="review-rating">
@@ -158,7 +158,7 @@
     const allReviews = JSON.parse(localStorage.getItem("reviews")) || [];
 
     const filtered = allReviews.filter(r =>
-        r.product === "Varsity Jacket"
+        r.product === "Laurier Varsity Jacket"
     );
 
     filtered.forEach(r => {
