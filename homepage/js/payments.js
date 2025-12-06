@@ -167,6 +167,39 @@ function initPaymentModule() {
     }
 
     if (result.status === "approved") {
+      // Save order to local order history so it shows on the My Orders page
+      try {
+        const existing = JSON.parse(localStorage.getItem("orders") || "[]");
+        const { subtotal, tax, total } = calculateTotals();
+        const now = new Date();
+        const id = `ORD-${now.getFullYear()}-${String(existing.length + 1).padStart(3, "3")}`;
+
+        const items = cart.map(item => ({
+          name: item.title || item.name,
+          quantity: item.quantity,
+          price: item.price,
+          image: item.image || ""
+        }));
+
+        const addressString = [data.address, data.city, data.postal].filter(Boolean).join(", ");
+
+        const newOrder = {
+          id,
+          date: now.toISOString(),
+          status: "Processing",
+          items,
+          subtotal,
+          tax,
+          total,
+          address: addressString
+        };
+
+        existing.push(newOrder);
+        localStorage.setItem("orders", JSON.stringify(existing));
+      } catch (e) {
+        // If anything goes wrong with saving order history, fail silently
+      }
+
       // Clear cart and flip UI to success state
       localStorage.removeItem("hawkshop_cart");
       cart = [];

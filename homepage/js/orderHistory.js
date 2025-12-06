@@ -3,20 +3,34 @@
   let allOrders = [];
   let filteredOrders = [];
 
-  // Fetch orders from mock JSON or localStorage
+  // Fetch orders from mock JSON + any saved orders from checkout (localStorage)
   async function fetchOrders() {
     try {
-      // Try to fetch from JSON file first
-      const response = await fetch('data/orders.json');
-      if (response.ok) {
-        allOrders = await response.json();
-      } else {
-        // Fallback to localStorage if fetch fails
-        allOrders = JSON.parse(localStorage.getItem('orders') || '[]');
+      let baseOrders = [];
+      try {
+        const response = await fetch('data/orders.json');
+        if (response.ok) {
+          baseOrders = await response.json();
+        }
+      } catch (e) {
+        // ignore fetch errors, we'll still look at localStorage
       }
+
+      let storedOrders = [];
+      try {
+        storedOrders = JSON.parse(localStorage.getItem('orders') || '[]');
+      } catch (e) {
+        storedOrders = [];
+      }
+
+      allOrders = [...baseOrders, ...storedOrders];
     } catch (e) {
-      // If fetch fails (e.g., CORS), use localStorage
-      allOrders = JSON.parse(localStorage.getItem('orders') || '[]');
+      // Final fallback: just use any localStorage orders
+      try {
+        allOrders = JSON.parse(localStorage.getItem('orders') || '[]');
+      } catch {
+        allOrders = [];
+      }
     }
     
     filteredOrders = [...allOrders];
@@ -45,10 +59,24 @@
   function renderOrder(order) {
     const orderCard = document.createElement('div');
     orderCard.className = 'order-card';
-    
-    const itemsList = order.items.map(item => `
+
+    // Derive subtotal / tax breakdown when not explicitly provided
+    let subtotal = typeof order.subtotal === 'number' ? order.subtotal : 0;
+    let tax = typeof order.tax === 'number' ? order.tax : 0;
+
+    if (!order.subtotal || !order.tax) {
+      subtotal = (order.items || []).reduce((sum, item) => {
+        const price = Number(item.price || 0);
+        const qty = Number(item.quantity || 1);
+        return sum + price * qty;
+      }, 0);
+      const total = typeof order.total === 'number' ? order.total : subtotal;
+      tax = Math.max(0, total - subtotal);
+    }
+
+    const itemsList = (order.items || []).map(item => `
       <div class="order-item">
-        <img src="${item.image}" alt="${item.name}" class="order-item-image" onerror="this.style.display='none'">
+        <img src="${item.image || ''}" alt="${item.name}" class="order-item-image" onerror="this.style.display='none'">
         <div class="order-item-details">
           <span class="order-item-name">${item.name}</span>
           <span class="order-item-qty">Qty: ${item.quantity}</span>
@@ -60,22 +88,49 @@
     orderCard.innerHTML = `
       <div class="order-header">
         <div class="order-info">
-          <h3 class="order-id">${order.id}</h3>
+          <h3 class="order-id">Order #${order.id}</h3>
           <p class="order-date">${formatDate(order.date)}</p>
         </div>
         <div class="order-status-container">
           <span class="order-status ${getStatusClass(order.status)}">${order.status}</span>
         </div>
       </div>
-      <div class="order-items">
-        ${itemsList}
+      <div class="order-meta">
+        <div class="order-total-line">
+          <span class="order-total-label">Total:</span>
+          <span class="order-total-amount">$${order.total.toFixed(2)}</span>
+        </div>
+        <button type="button" class="order-details-btn">View Details</button>
       </div>
-      <div class="order-footer">
-        <span class="order-total-label">Total:</span>
-        <span class="order-total-amount">$${order.total.toFixed(2)}</span>
+      <div class="order-details">
+        <div class="order-items">
+          ${itemsList}
+        </div>
+        <div class="order-summary-breakdown">
+          <div><span>Subtotal:</span><span>$${subtotal.toFixed(2)}</span></div>
+          <div><span>Tax:</span><span>$${tax.toFixed(2)}</span></div>
+          <div class="order-summary-total"><span>Total:</span><span>$${order.total.toFixed(2)}</span></div>
+        </div>
+        ${order.address ? `
+          <div class="order-address">
+            <h4>Delivery address</h4>
+            <p>${order.address}</p>
+          </div>
+        ` : ''}
       </div>
     `;
-    
+
+    const detailsEl = orderCard.querySelector('.order-details');
+    const toggleBtn = orderCard.querySelector('.order-details-btn');
+
+    if (detailsEl && toggleBtn) {
+      detailsEl.classList.remove('open');
+      toggleBtn.addEventListener('click', () => {
+        const isOpen = detailsEl.classList.toggle('open');
+        toggleBtn.textContent = isOpen ? 'Hide Details' : 'View Details';
+      });
+    }
+
     return orderCard;
   }
 
@@ -90,8 +145,8 @@
       container.innerHTML = `
         <div class="empty-state">
           <i class="fa-solid fa-box-open"></i>
-          <h2>You have no previous orders</h2>
-          <p>Start shopping to see your order history here!</p>
+          <h2>You haven’t placed any orders yet.</h2>
+          <p>Start shopping!</p>
           <a href="index.html" class="btn">Start Shopping</a>
         </div>
       `;
