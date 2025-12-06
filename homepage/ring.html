@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Laurier Sterling Silver Ring - HawkShop</title>
 
-    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
-
     <script src="https://kit.fontawesome.com/b551428bdf.js" crossorigin="anonymous"></script>
 
     <style>
@@ -21,14 +19,13 @@
     </style>
 </head>
 
-<body>
+<body class="reviews-page">
 
 <!-- NAV BAR -->
 <div id="header">
     <div class="container">
         <nav>
             <img src="images/logos/hawkshop.png" class="logo">
-
             <ul id="sidemenu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="coursem.html">Course Materials</a></li>
@@ -65,28 +62,33 @@
             <p style="font-size:22px;color:#dcd6ff;margin-top:10px;">$49.99</p>
 
             <p style="margin-top:15px;line-height:1.6;">
-                Elegant sterling silver ring engraved with the Laurier crest.  
-                A premium keepsake for students, alumni, or collectors.
+                Elegant sterling silver ring engraved with the Laurier crest. A premium keepsake for students, alumni, or collectors.
             </p>
 
             <br>
 
             <button class="cameron-btn add-to-cart"
-                data-id="gift-ring-1"
+                data-id="giftshop-LaurierRing-1"
                 data-name="Laurier Sterling Silver Ring"
                 data-price="49.99"
                 data-image="images/giftshop/LaurierRing.jpg">
                 Add to Cart
             </button>
 
-            <button class="cameron-btn add-to-wishlist" style="margin-left:10px;">Add to Wishlist</button>
+            <button class="cameron-btn add-to-wishlist"
+                data-id="giftshop-LaurierRing-1"
+                data-name="Laurier Sterling Silver Ring"
+                data-price="49.99"
+                data-image="images/giftshop/LaurierRing.jpg"
+                style="margin-left:10px;">
+                Add to Wishlist
+            </button>
 
             <button class="cameron-btn leave-review"
                 data-product="Laurier Sterling Silver Ring"
                 style="margin-left:10px;background:#421885;">
                 Leave Review
             </button>
-
         </div>
     </div>
 
@@ -118,22 +120,50 @@
 </div>
 
 <!-- SCRIPTS -->
+<script src="auth.js"></script>
+<script src="navbar.js"></script>
 <script src="cart.js"></script>
 <script src="wishlist.js"></script>
 <script src="reviews.js"></script>
-<script src="navbar.js"></script>
 
 <script>
+    // Handle adding to wishlist
+    const wishlistButtons = document.querySelectorAll('.add-to-wishlist');
+
+    wishlistButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const product = {
+                id: button.getAttribute('data-id'),
+                name: button.getAttribute('data-name'),
+                price: button.getAttribute('data-price'),
+                image: button.getAttribute('data-image'),
+            };
+
+            // Get existing wishlist from localStorage or create an empty array
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+            // Add new product to wishlist if it's not already added
+            if (!wishlist.some(item => item.id === product.id)) {
+                wishlist.push(product);
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                alert('Product added to wishlist!');
+            } else {
+                alert('This product is already in your wishlist!');
+            }
+        });
+    });
+
+    // Display reviews for this specific product
     const reviewList = document.getElementById("product-reviews");
     const allReviews = JSON.parse(localStorage.getItem("reviews")) || [];
-    const filtered = allReviews.filter(r => r.product === "Laurier Sterling Silver Ring");
+
+    const filtered = allReviews.filter(r =>
+        r.product === "Laurier Sterling Silver Ring"
+    );
 
     filtered.forEach(r => {
         let card = document.createElement("div");
         card.className = "work";
-
-        let img = document.createElement("img");
-        img.src = "images/logos/hawkshop.png";
 
         let layer = document.createElement("div");
         layer.className = "layer";
@@ -145,10 +175,10 @@
             <small>${r.date}</small>
         `;
 
-        card.appendChild(img);
         card.appendChild(layer);
         reviewList.appendChild(card);
     });
+
 </script>
 
 </body>
