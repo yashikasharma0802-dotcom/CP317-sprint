@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laurier Sterling Silver Ring - HawkShop</title>
+    <title>Laurier Ring - HawkShop</title>
 
-    <!-- Link to CSS -->
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/b551428bdf.js" crossorigin="anonymous"></script>
 
@@ -54,40 +53,39 @@
     <div style="display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start;">
 
         <div style="flex:1;min-width:280px;">
-            <!-- Ensure the path to your images is correct -->
             <img src="images/giftshop/LaurierRing.jpg" style="width:100%;border-radius:12px;">
         </div>
 
         <div style="flex:1;min-width:280px;">
-            <h1 class="sub-title">Laurier Sterling Silver Ring</h1>
+            <h1 class="sub-title">Laurier Ring</h1>
 
-            <p style="font-size:22px;color:#dcd6ff;margin-top:10px;">$49.99</p>
+            <p style="font-size:22px;color:#dcd6ff;margin-top:10px;">$99.99</p>
 
             <p style="margin-top:15px;line-height:1.6;">
-                Elegant sterling silver ring engraved with the Laurier crest. A premium keepsake for students, alumni, or collectors.
+                Elegant Laurier Ring featuring a stunning crest design. A great gift or keepsake for alumni and students alike.
             </p>
 
             <br>
 
             <button class="cameron-btn add-to-cart"
                 data-id="giftshop-LaurierRing-1"
-                data-name="Laurier Sterling Silver Ring"
-                data-price="49.99"
+                data-name="Laurier Ring"
+                data-price="99.99"
                 data-image="images/giftshop/LaurierRing.jpg">
                 Add to Cart
             </button>
 
             <button class="cameron-btn add-to-wishlist"
                 data-id="giftshop-LaurierRing-1"
-                data-name="Laurier Sterling Silver Ring"
-                data-price="49.99"
+                data-name="Laurier Ring"
+                data-price="99.99"
                 data-image="images/giftshop/LaurierRing.jpg"
                 style="margin-left:10px;">
                 Add to Wishlist
             </button>
 
             <button class="cameron-btn leave-review"
-                data-product="Laurier Sterling Silver Ring"
+                data-product="Laurier Ring"
                 style="margin-left:10px;">
                 Leave Review
             </button>
@@ -102,7 +100,7 @@
 <!-- REVIEW MODAL -->
 <div id="review-modal" class="modal" style="display:none;">
     <div class="modal-content">
-        <h2 id="review-product-title">Laurier Sterling Silver Ring</h2>
+        <h2 id="review-product-title">Laurier Ring</h2>
 
         <label for="review-rating">Rating:</label>
         <select id="review-rating">
@@ -160,7 +158,7 @@
     const allReviews = JSON.parse(localStorage.getItem("reviews")) || [];
 
     const filtered = allReviews.filter(r =>
-        r.product === "Laurier Sterling Silver Ring"
+        r.product === "Laurier Ring"
     );
 
     filtered.forEach(r => {
