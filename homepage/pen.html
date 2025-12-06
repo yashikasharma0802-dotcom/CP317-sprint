@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laurier Premium Ballpoint Pen - HawkShop</title>
+    <title>Laurier Pen - HawkShop</title>
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/b551428bdf.js" crossorigin="anonymous"></script>
 
     <style>
@@ -21,24 +19,21 @@
     </style>
 </head>
 
-<body>
+<body class="reviews-page">
 
 <!-- NAV BAR -->
 <div id="header">
     <div class="container">
         <nav>
             <img src="images/logos/hawkshop.png" class="logo">
-
             <ul id="sidemenu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="coursem.html">Course Materials</a></li>
-        <li><a href="merch.html">Apparel & Merch</a></li>
-        <li><a href="stationary.html">Stationary & Tech</a></li>
-        <li><a href="giftshop.html">Giftshop</a></li>
-        <li><a href="wishlist.html">Wishlist</a></li>
-        <li><a href="order-history.html">Orders</a></li>
-        <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="coursem.html">Course Materials</a></li>
+                <li><a href="merch.html">Apparel & Merch</a></li>
+                <li><a href="stationary.html">Stationary & Tech</a></li>
+                <li><a href="giftshop.html">Giftshop</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
                 <i class="fa-solid fa-rectangle-xmark" onclick="closemenu()"></i>
             </ul>
 
@@ -62,30 +57,36 @@
         </div>
 
         <div style="flex:1;min-width:280px;">
-            <h1 class="sub-title">Laurier Premium Ballpoint Pen</h1>
+            <h1 class="sub-title">Laurier Pen</h1>
 
-            <p style="font-size:22px;color:#dcd6ff;margin-top:10px;">$4.99</p>
+            <p style="font-size:22px;color:#dcd6ff;margin-top:10px;">$2.99</p>
 
             <p style="margin-top:15px;line-height:1.6;">
-                Smooth-writing Laurier ballpoint pen in signature purple and gold.
-                Perfect for note-taking, journaling, and exam writing.
+                Premium quality Laurier pen for smooth writing, ideal for note-taking and exams.
             </p>
 
             <br>
 
             <button class="cameron-btn add-to-cart"
                 data-id="stationary-pen-1"
-                data-name="Laurier Premium Ballpoint Pen"
-                data-price="4.99"
+                data-name="Laurier Pen"
+                data-price="2.99"
                 data-image="images/stationary/pen.jpg">
                 Add to Cart
             </button>
 
-            <button class="cameron-btn add-to-wishlist" style="margin-left:10px;">Add to Wishlist</button>
+            <button class="cameron-btn add-to-wishlist"
+                data-id="stationary-pen-1"
+                data-name="Laurier Pen"
+                data-price="2.99"
+                data-image="images/stationary/pen.jpg"
+                style="margin-left:10px;">
+                Add to Wishlist
+            </button>
 
             <button class="cameron-btn leave-review"
-                data-product="Laurier Premium Ballpoint Pen"
-                style="margin-left:10px;">
+                data-product="Laurier Pen"
+                style="margin-left:10px;background:#421885;">
                 Leave Review
             </button>
         </div>
@@ -99,7 +100,7 @@
 <!-- REVIEW MODAL -->
 <div id="review-modal" class="modal" style="display:none;">
     <div class="modal-content">
-        <h2 id="review-product-title">Laurier Premium Ballpoint Pen</h2>
+        <h2 id="review-product-title">Laurier Pen</h2>
 
         <label for="review-rating">Rating:</label>
         <select id="review-rating">
@@ -119,22 +120,50 @@
 </div>
 
 <!-- SCRIPTS -->
-<script src="js/cart.js"></script>
-<script src="js/wishlist.js"></script>
-<script src="js/reviews.js"></script>
-<script src="js/navbar.js"></script>
+<script src="auth.js"></script>
+<script src="navbar.js"></script>
+<script src="cart.js"></script>
+<script src="wishlist.js"></script>
+<script src="reviews.js"></script>
 
 <script>
+    // Handle adding to wishlist
+    const wishlistButtons = document.querySelectorAll('.add-to-wishlist');
+
+    wishlistButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const product = {
+                id: button.getAttribute('data-id'),
+                name: button.getAttribute('data-name'),
+                price: button.getAttribute('data-price'),
+                image: button.getAttribute('data-image'),
+            };
+
+            // Get existing wishlist from localStorage or create an empty array
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+            // Add new product to wishlist if it's not already added
+            if (!wishlist.some(item => item.id === product.id)) {
+                wishlist.push(product);
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                alert('Product added to wishlist!');
+            } else {
+                alert('This product is already in your wishlist!');
+            }
+        });
+    });
+
+    // Display reviews for this specific product
     const reviewList = document.getElementById("product-reviews");
     const allReviews = JSON.parse(localStorage.getItem("reviews")) || [];
-    const filtered = allReviews.filter(r => r.product === "Laurier Premium Ballpoint Pen");
+
+    const filtered = allReviews.filter(r =>
+        r.product === "Laurier Pen"
+    );
 
     filtered.forEach(r => {
         let card = document.createElement("div");
         card.className = "work";
-
-        let img = document.createElement("img");
-        img.src = "images/logos/hawkshop.png";
 
         let layer = document.createElement("div");
         layer.className = "layer";
@@ -146,12 +175,11 @@
             <small>${r.date}</small>
         `;
 
-        card.appendChild(img);
         card.appendChild(layer);
         reviewList.appendChild(card);
     });
+
 </script>
 
 </body>
 </html>
-

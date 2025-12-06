@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Texas Instruments Scientific Calculator - HawkShop</title>
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/b551428bdf.js" crossorigin="anonymous"></script>
 
     <style>
@@ -28,17 +26,14 @@
     <div class="container">
         <nav>
             <img src="images/logos/hawkshop.png" class="logo">
-
             <ul id="sidemenu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="coursem.html">Course Materials</a></li>
-        <li><a href="merch.html">Apparel & Merch</a></li>
-        <li><a href="stationary.html">Stationary & Tech</a></li>
-        <li><a href="giftshop.html">Giftshop</a></li>
-        <li><a href="wishlist.html">Wishlist</a></li>
-        <li><a href="order-history.html">Orders</a></li>
-        <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="coursem.html">Course Materials</a></li>
+                <li><a href="merch.html">Apparel & Merch</a></li>
+                <li><a href="stationary.html">Stationary & Tech</a></li>
+                <li><a href="giftshop.html">Giftshop</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
                 <i class="fa-solid fa-rectangle-xmark" onclick="closemenu()"></i>
             </ul>
 
@@ -67,8 +62,7 @@
             <p style="font-size:22px;color:#dcd6ff;margin-top:10px;">$19.99</p>
 
             <p style="margin-top:15px;line-height:1.6;">
-                Reliable TI scientific calculator approved for all Laurier math,
-                statistics, and science exams. Lightweight and durable.
+                Reliable TI scientific calculator approved for all Laurier math, statistics, and science exams. Lightweight and durable.
             </p>
 
             <br>
@@ -95,7 +89,6 @@
                 style="margin-left:10px;background:#421885;">
                 Leave Review
             </button>
-
         </div>
     </div>
 
@@ -127,12 +120,39 @@
 </div>
 
 <!-- SCRIPTS -->
+<script src="auth.js"></script>
 <script src="navbar.js"></script>
 <script src="cart.js"></script>
 <script src="wishlist.js"></script>
 <script src="reviews.js"></script>
 
 <script>
+    // Handle adding to wishlist
+    const wishlistButtons = document.querySelectorAll('.add-to-wishlist');
+
+    wishlistButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const product = {
+                id: button.getAttribute('data-id'),
+                name: button.getAttribute('data-name'),
+                price: button.getAttribute('data-price'),
+                image: button.getAttribute('data-image'),
+            };
+
+            // Get existing wishlist from localStorage or create an empty array
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+            // Add new product to wishlist if it's not already added
+            if (!wishlist.some(item => item.id === product.id)) {
+                wishlist.push(product);
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                alert('Product added to wishlist!');
+            } else {
+                alert('This product is already in your wishlist!');
+            }
+        });
+    });
+
     // Display reviews for this specific product
     const reviewList = document.getElementById("product-reviews");
     const allReviews = JSON.parse(localStorage.getItem("reviews")) || [];
@@ -145,9 +165,6 @@
         let card = document.createElement("div");
         card.className = "work";
 
-        let img = document.createElement("img");
-        img.src = "images/logos/hawkshop.png";
-
         let layer = document.createElement("div");
         layer.className = "layer";
 
@@ -158,18 +175,11 @@
             <small>${r.date}</small>
         `;
 
-        card.appendChild(img);
         card.appendChild(layer);
         reviewList.appendChild(card);
     });
-</script>
 
-<script src="js/auth.js"></script>
-<script src="js/navbar.js"></script>
-<script src="js/cart.js"></script>
-<script src="js/wishlist.js"></script>
-<script src="js/reviews.js"></script>
+</script>
 
 </body>
 </html>
-

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laurier Crewneck - HawkShop</title>
+    <title>Introduction to Psychology Textbook - HawkShop</title>
 
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/b551428bdf.js" crossorigin="anonymous"></script>
@@ -53,42 +53,43 @@
     <div style="display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start;">
 
         <div style="flex:1;min-width:280px;">
-            <img src="images/merch/crewneck.jpg" style="width:100%;border-radius:12px;">
+            <img src="images/coursem/intro-to-psych.jpg" style="width:100%;border-radius:12px;">
         </div>
 
         <div style="flex:1;min-width:280px;">
-            <h1 class="sub-title">Laurier Crewneck</h1>
+            <h1 class="sub-title">Introduction to Psychology Textbook</h1>
 
             <p style="font-size:22px;color:#dcd6ff;margin-top:10px;">$59.99</p>
 
             <p style="margin-top:15px;line-height:1.6;">
-                Stylish Laurier crewneck sweatshirt, perfect for casual wear. Features the university's embroidered logo.
+                A comprehensive textbook that introduces key concepts, theories, and research in the field of psychology.
             </p>
 
             <br>
 
             <button class="cameron-btn add-to-cart"
-                data-id="merch-crewneck-1"
-                data-name="Laurier Crewneck"
+                data-id="coursem-intro-to-psych"
+                data-name="Introduction to Psychology Textbook"
                 data-price="59.99"
-                data-image="images/merch/crewneck.jpg">
+                data-image="images/coursem/intro-to-psych.jpg">
                 Add to Cart
             </button>
 
             <button class="cameron-btn add-to-wishlist"
-                data-id="merch-crewneck-1"
-                data-name="Laurier Crewneck"
+                data-id="coursem-intro-to-psych"
+                data-name="Introduction to Psychology Textbook"
                 data-price="59.99"
-                data-image="images/merch/crewneck.jpg"
+                data-image="images/coursem/intro-to-psych.jpg"
                 style="margin-left:10px;">
                 Add to Wishlist
             </button>
 
             <button class="cameron-btn leave-review"
-                data-product="Laurier Crewneck"
+                data-product="Introduction to Psychology Textbook"
                 style="margin-left:10px;background:#421885;">
                 Leave Review
             </button>
+
         </div>
     </div>
 
@@ -100,7 +101,7 @@
 <!-- REVIEW MODAL -->
 <div id="review-modal" class="modal" style="display:none;">
     <div class="modal-content">
-        <h2 id="review-product-title">Laurier Crewneck</h2>
+        <h2 id="review-product-title">Introduction to Psychology Textbook</h2>
 
         <label for="review-rating">Rating:</label>
         <select id="review-rating">
@@ -120,13 +121,76 @@
 </div>
 
 <!-- SCRIPTS -->
-<script src="auth.js"></script>
 <script src="navbar.js"></script>
 <script src="cart.js"></script>
 <script src="wishlist.js"></script>
 <script src="reviews.js"></script>
 
 <script>
+    // Handle submitting a review
+    document.getElementById('submit-review').addEventListener('click', function() {
+        const rating = document.getElementById('review-rating').value;
+        const text = document.getElementById('review-text').value;
+        const productName = document.getElementById('review-product-title').innerText;
+
+        // Create the review object
+        const review = {
+            product: productName,
+            rating: rating,
+            text: text,
+            date: new Date().toLocaleDateString(),
+        };
+
+        // Get existing reviews from localStorage or create a new array
+        let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+
+        // Add the new review to the array
+        reviews.push(review);
+
+        // Save updated reviews to localStorage
+        localStorage.setItem('reviews', JSON.stringify(reviews));
+
+        // Close the modal
+        document.getElementById('review-modal').style.display = 'none';
+
+        // Reset the form
+        document.getElementById('review-rating').value = '1';
+        document.getElementById('review-text').value = '';
+
+        // Reload the reviews
+        loadReviews();
+    });
+
+    // Load and display reviews for the product
+    function loadReviews() {
+        const reviewList = document.getElementById("product-reviews");
+        const allReviews = JSON.parse(localStorage.getItem("reviews")) || [];
+
+        // Filter reviews for this specific product
+        const filtered = allReviews.filter(r => r.product === "Introduction to Psychology Textbook");
+
+        reviewList.innerHTML = ''; // Clear existing reviews
+
+        // Loop through the filtered reviews and display them
+        filtered.forEach(r => {
+            let card = document.createElement("div");
+            card.className = "work";
+
+            let layer = document.createElement("div");
+            layer.className = "layer";
+
+            layer.innerHTML = `
+                <h3>${r.product}</h3>
+                <p>${"⭐".repeat(r.rating)}${"☆".repeat(5 - r.rating)}</p>
+                <p>${r.text || "(no review)"}</p>
+                <small>${r.date}</small>
+            `;
+
+            card.appendChild(layer);
+            reviewList.appendChild(card);
+        });
+    }
+
     // Handle adding to wishlist
     const wishlistButtons = document.querySelectorAll('.add-to-wishlist');
 
@@ -153,32 +217,8 @@
         });
     });
 
-    // Display reviews for this specific product
-    const reviewList = document.getElementById("product-reviews");
-    const allReviews = JSON.parse(localStorage.getItem("reviews")) || [];
-
-    const filtered = allReviews.filter(r =>
-        r.product === "Laurier Crewneck"
-    );
-
-    filtered.forEach(r => {
-        let card = document.createElement("div");
-        card.className = "work";
-
-        let layer = document.createElement("div");
-        layer.className = "layer";
-
-        layer.innerHTML = `
-            <h3>${r.product}</h3>
-            <p>${"⭐".repeat(r.rating)}${"☆".repeat(5 - r.rating)}</p>
-            <p>${r.text || "(no review)"}</p>
-            <small>${r.date}</small>
-        `;
-
-        card.appendChild(layer);
-        reviewList.appendChild(card);
-    });
-
+    // Load reviews when the page loads
+    loadReviews();
 </script>
 
 </body>

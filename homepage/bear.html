@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laurier Plush Bear - HawkShop</title>
+    <title>Laurier Bear - HawkShop</title>
 
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/b551428bdf.js" crossorigin="anonymous"></script>
@@ -57,33 +57,38 @@
         </div>
 
         <div style="flex:1;min-width:280px;">
-            <h1 class="sub-title">Laurier Plush Bear</h1>
+            <h1 class="sub-title">Laurier Bear</h1>
 
-            <p style="font-size:22px;color:#dcd6ff;margin-top:10px;">$24.99</p>
+            <p style="font-size:22px;color:#dcd6ff;margin-top:10px;">$29.99</p>
 
             <p style="margin-top:15px;line-height:1.6;">
-                Soft and adorable Laurier plush bear wearing a purple sweater with the university logo.
-                Makes a perfect gift for students, alumni, or kids.
+                Soft, cuddly Laurier Bear plushie. A perfect souvenir or gift for Laurier fans.
             </p>
 
             <br>
 
             <button class="cameron-btn add-to-cart"
-                data-id="gift-bear-1"
-                data-name="Laurier Plush Bear"
-                data-price="24.99"
+                data-id="giftshop-LaurierBear-1"
+                data-name="Laurier Bear"
+                data-price="29.99"
                 data-image="images/giftshop/LaurierBear.jpg">
                 Add to Cart
             </button>
 
-            <button class="cameron-btn add-to-wishlist" style="margin-left:10px;">Add to Wishlist</button>
+            <button class="cameron-btn add-to-wishlist"
+                data-id="giftshop-LaurierBear-1"
+                data-name="Laurier Bear"
+                data-price="29.99"
+                data-image="images/giftshop/LaurierBear.jpg"
+                style="margin-left:10px;">
+                Add to Wishlist
+            </button>
 
             <button class="cameron-btn leave-review"
-                data-product="Laurier Plush Bear"
+                data-product="Laurier Bear"
                 style="margin-left:10px;background:#421885;">
                 Leave Review
             </button>
-
         </div>
     </div>
 
@@ -95,7 +100,7 @@
 <!-- REVIEW MODAL -->
 <div id="review-modal" class="modal" style="display:none;">
     <div class="modal-content">
-        <h2 id="review-product-title">Laurier Plush Bear</h2>
+        <h2 id="review-product-title">Laurier Bear</h2>
 
         <label for="review-rating">Rating:</label>
         <select id="review-rating">
@@ -115,18 +120,45 @@
 </div>
 
 <!-- SCRIPTS -->
+<script src="auth.js"></script>
 <script src="navbar.js"></script>
 <script src="cart.js"></script>
 <script src="wishlist.js"></script>
 <script src="reviews.js"></script>
 
 <script>
+    // Handle adding to wishlist
+    const wishlistButtons = document.querySelectorAll('.add-to-wishlist');
+
+    wishlistButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const product = {
+                id: button.getAttribute('data-id'),
+                name: button.getAttribute('data-name'),
+                price: button.getAttribute('data-price'),
+                image: button.getAttribute('data-image'),
+            };
+
+            // Get existing wishlist from localStorage or create an empty array
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+            // Add new product to wishlist if it's not already added
+            if (!wishlist.some(item => item.id === product.id)) {
+                wishlist.push(product);
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                alert('Product added to wishlist!');
+            } else {
+                alert('This product is already in your wishlist!');
+            }
+        });
+    });
+
     // Display reviews for this specific product
     const reviewList = document.getElementById("product-reviews");
     const allReviews = JSON.parse(localStorage.getItem("reviews")) || [];
 
     const filtered = allReviews.filter(r =>
-        r.product === "Laurier Plush Bear"
+        r.product === "Laurier Bear"
     );
 
     filtered.forEach(r => {
@@ -148,12 +180,6 @@
     });
 
 </script>
-
-<script src="auth.js"></script>
-<script src="navbar.js"></script>
-<script src="cart.js"></script>
-<script src="wishlist.js"></script>
-<script src="reviews.js"></script>
 
 </body>
 </html>
